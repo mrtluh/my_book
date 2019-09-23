@@ -1,0 +1,105 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>array数组的内置对象</title>
+	<script>
+//		// 构造函数
+//		var arr=new Array();
+//		// 字面量的方式
+//		arr=[]
+//		
+//		// 判断变量是不是数组的类型，两种
+//		// 1 instanceof 关键字
+//		var obj=[];
+//		// Array.isArray(对象)--->判断这个对象是不是数组
+//		
+//		console.log(obj instanceof Array);
+//		console.log(Array.isArray(obj))
+		
+		
+//		// 数组的拼接 .concat(数组2，数组3，数组4) 组合成一个新的数组
+//		var arr1=[1,2,3,4,5]
+//		var arr2=["a","b","c"]
+//		var arrnew=arr1.concat(arr2)
+//		console.log(arrnew)
+//		
+		
+//		// ever(函数)方法测试数组的所有元素是否都通过了指定函数的测试，返回布尔类型的值
+//		
+//		var arr=[1000,2000,3000];
+//		var flag=arr.every(function (a,b,c){
+//			// a:元素值
+//			// b:索引的值
+//			// c:谁调用了这个方法，那么c就是谁---->arr
+//			console.log(a+"==="+b+"==="+c)
+//			return a>2000;// 数组中每个元素都要大于2000的情况最后才返回Ture
+//			})
+//		console.log(flag)
+		
+		
+//		// str.filter(函数)每个元素都要执行函数里的条件 返回一个新的通过测试的元素的集合数组
+//		var arr=[10,20,30,40,50,60,70];
+//		var newarr=arr.filter(function (ele){
+//			// 可传三个参数
+//			// 1 元素的值
+//			// 2 元素的索引
+//			// 3 被遍历的数组
+//			return ele>40;
+//		});
+//		console.log(newarr)
+//		// 案例2
+//		var arr2=[10,0,30,40,50,0,70];
+//		var newarr2=arr2.filter(function (ele){
+//			// 可传三个参数
+//			// 1 元素的值
+//			// 2 元素的索引
+//			// 3 被遍历的数组
+//			return ele!=0;
+//		});
+//		console.log(newarr2)
+		
+		
+		// 数组的四个重要的方法
+		var arr=[10,20,30,40,50,60];
+		// str.push(值) ---》吧值追加到数组中，加到最后，返回值是追加数据之后的数据长度
+		var newarr=arr.push(70);
+		console.log(arr);
+		console.log(newarr);
+		// str.pop()  ----》删除数组中最后一个元素，返回值就是删除的这个值
+		var arr=[10,20,30,40,50,60];
+		var result=arr.pop();
+		console.log(arr);
+		console.log(result);
+		// str.shift();--->删除数组中第一个元素，返回值就是删除的这个值
+		var arr=[10,20,30,40,50,60];
+		var result=arr.shift();
+		console.log(arr);
+		console.log(result);
+		// str.unshift();-->向数组的第一个元素前面插入一个新的元素，返回值是追加数据之后的数据长度
+		var arr=[10,20,30,40,50,60];
+		var result=arr.unshift(70);
+		console.log(arr);
+		console.log(result);
+		// str.reverse();反转数组，返回反转后的数组
+		var arr=[10,20,30,40,50,60];
+		arr.reverse();
+		console.log(arr);
+		// str.sort(函数固定写法);排序数组，适当的位置对数组排序
+		var arr=[70,20,30,8,50,30];
+		arr.sort(function(a,b){
+			if(a>b){
+				return 1;
+			}else if(a==b){
+				return 0;
+			}else{
+				return -1;
+			}
+		});
+		console.log(arr);
+	</script>
+</head>
+
+<body>
+</body>
+</html>

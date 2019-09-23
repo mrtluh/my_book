@@ -1,0 +1,59 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>字面量的方式创建对象</title>
+	<script>
+		
+		//字面量的方式创建对象
+		
+		var obj={}; //空对象
+		//添加属性
+		obj.name = "小白";
+		obj.age = 10;
+		obj.sayHi = function(){
+			console.log("我叫"+this.name+"今年"+this.age+"岁了");
+		};
+		obj.sayHi();
+		
+		// 优化后的写法
+		
+		var obj = {
+			name:"小明",
+			age:20,
+			sayHi:function(){
+				console.log("我是"+obj.name)
+			}
+		};
+		obj.sayHi();
+		obj["name"] = "小强";
+		obj["sayHi"]();
+		
+		// 字面量创建对象的缺陷:
+		
+		// 点语法：对象.名字 = 值; 对象.名字=函数;
+		// 没有什么点，就有了
+		
+		/*
+		
+		js是一门什么样的语言？
+		是一门解释性的语言
+		是一门脚本语言
+		是一门弱类型语言，声明变量都用Var
+		是一门基于对象的语言
+		是一门动态类型的语言
+		
+		1.代码只有在执行到这个位置的时候，才知道变量中到底储存的是什么
+		  如果是对象就有属性和方法，如果是变量就是变量的作用
+		
+		2.对象没有什么，只要点了，通过点语法，那么就可以对对象添加属性和方法
+		
+		
+		*/
+		
+	</script>
+</head>
+
+<body>
+</body>
+</html>

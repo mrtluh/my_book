@@ -1,0 +1,43 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>javascript02变量</title>
+</head>
+
+<body>
+	<script>
+		// 交换两个变量的值
+		// 方法一
+		
+		var num1=10;
+		var num2=20;
+		num1=num1+num2; //30
+		num2=num1-num2; //10
+		num1=num1-num2; //20
+		console.log(num1,num2)
+		
+		// 方法二 中间变量法
+		
+		var num1=10;
+		var num2=20;
+		var num3;
+		// 用中间变量num3存储变量num1的值
+		num3 = num1; //10
+		num1 = num2; //20
+		num2 = num3; //10
+		console.log(num1,num2)
+		
+		
+		// 方法三 拓展变量的交换----位运算
+		
+		var num1=10;
+		var num2=20;
+		num1=num1^num2;
+		num2=num1^num2;
+		num1=num1^num2;
+		console.log(num1,num2)
+		
+	</script>
+</body>
+</html>

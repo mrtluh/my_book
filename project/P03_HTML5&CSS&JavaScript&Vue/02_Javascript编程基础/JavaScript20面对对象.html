@@ -1,0 +1,104 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>面向对象</title>
+	
+	
+	
+	<script>
+		// 面向对象
+		/*
+		面向对象
+		面向过程
+		
+		JS是一门基于对象的语言
+		万物皆对象----->
+		
+		
+		什么是对象
+		有特征和行为的某一个事物
+		面向对象的特征：封装，继承，和多态（抽象）
+		
+		
+		对象的特点
+		对象有特征和行为
+		
+		对象：有属性和方法，特指的某个事物
+		
+		*/
+		
+		//创建对象的三种方式
+		
+		/*
+		
+		1. 调用系统构造函数创建对象
+		
+		
+		
+		2.自定义构造函数创建对象(结合第一种和通过工厂模式创建对象)
+		
+		
+		
+		3.字面量的方式创建对象
+		
+		*/
+		
+		
+		var obj = new Object();
+		// 对象有特征--- 属性和行为---方法
+		
+		// 添加属性----   对象.名字 = 值
+		
+		obj.name="小苏";
+		obj.age=18;
+		obj.sex="女";
+		
+		// 添加方法--- 如何添加方法？ 对象.名字 =函数
+		
+		obj.eat = function () {
+			console.log("hello world");
+		}
+		obj.play = function() {
+			console.log("我喜欢玩飞机大战");
+		}
+		
+		obj.cook = function () {
+			console.log("切菜");
+			console.log("洗菜");
+			console.log("炒菜");
+			console.log("出锅");
+		}
+		
+		console.log(obj.name); //获取---输出
+		console.log(obj.age)
+		console.log(obj.sex)
+		
+		// 方法的调用
+		
+		obj.eat();
+		obj.play();
+		obj.cook();
+		
+		
+		// 创建一个手机的对象，手机又型号。有颜色，可以打电话和发短信
+		
+		
+		var phone = new Object();
+		phone.type = "iphone8";
+		phone.color = "黑色";
+		phone.call = function(){
+			console.log("打电话");
+		}
+		phone.sendMessage = function(){
+			console.log("你干啥呢，我烧锅炉呢");
+		}
+		console.log(phone.type);
+		phone.sendMessage();
+		phone.call();
+	</script>
+</head>
+
+<body>
+</body>
+</html>

@@ -1,0 +1,57 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>表单练习</title>
+</head>
+
+<body> 
+<h2 align="center">用户注册界面</h2>
+	<form action="form_action.php" title="用户注册界面" method="post"></form>
+	<fieldset >
+	<legend>人员注册信息</legend>
+	用户名：
+	<input type="text" value="请输入用户名" maxlength="6"> <br><br>
+	密&nbsp;码：
+	<input type="password" value="" maxlength="18"> <br><br>
+	性&nbsp;别：
+	<input type="radio" name="gender" checked>男
+	<input type="radio" name="gender">女 <br><br>
+	籍&nbsp;贯：
+	<select name="jg" id="">
+		<option value="hn">河南</option>
+		<option value="hb">河北</option>
+		<option value="sx">山西</option>
+		<option value="js">江苏</option>
+		<option value="ah">安徽</option>
+		<option value="sd">山东</option>
+		<option value="gs" selected>甘肃</option>
+	</select>
+	<select name="" id="">
+	<optgroup label="甘肃省">
+		<option value="">兰州</option>
+		<option value="">武威</option>
+		<option value="">白银</option>
+		<option value="">天水</option>
+		<option value="">金昌</option>
+		</optgroup>
+	</select>
+	<br><br>
+	手机号码
+	<input type="text" maxlength="11"> <br><br>
+	爱&nbsp;好
+	<input type="checkbox" checked>看书
+	<input type="checkbox">旅游
+	<input type="checkbox">跑步
+	<input type="checkbox">打游戏
+	<input type="checkbox">音乐
+	<br><br>
+	请上传头像
+	<input type="file"><br><br>
+	请简单介绍自己:<br>
+	<textarea name="" id="" cols="30" rows="10"></textarea><br><br>
+	&nbsp;<input type="submit">  <input type="reset"> <input value="普通按钮" type="button">   <br><br>
+	&nbsp;<input type="image" src="images/flower.ico">
+		</fieldset>
+	</body>
+</html>

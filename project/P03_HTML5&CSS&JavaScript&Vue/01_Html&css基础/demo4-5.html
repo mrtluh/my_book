@@ -1,0 +1,49 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>label控件的使用</title>
+	<style>
+		input {
+			border: 0 none;
+			outline-style: none;
+		}
+		
+		.username {
+			border: 2px solid #E91637;
+			background-color:aliceblue;
+		}
+		.username:focus {
+			background-color: antiquewhite;
+		}
+		
+		.mail {
+			border-bottom: 2px dotted #797979;
+		}
+		
+		.search {
+			border: 2px solid #0379AD;
+			background: url(search.png) no-repeat right;
+			
+		}
+	
+	
+	
+	</style>
+</head>
+
+<body>
+	<label for="um">用户名</label>
+	<input type="text" class="username" id="um">
+	<br>
+	<br>
+	<label for="mail">邮&nbsp&nbsp;箱</label>
+	<input type="text" class="mail" id="mail">
+	<br>
+	<br>
+	<label for="search">搜&nbsp&nbsp;索</label>
+	<input type="text" class="search" id="search">
+	
+	
+</body>
+</html>

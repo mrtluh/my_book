@@ -1,0 +1,84 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>运算符</title>
+</head>
+
+<body>
+	
+	
+	
+	
+	
+	
+	<script>
+		
+		var num1 = 10;
+		num1++; //自身加1--自加
+		console.log(num1)
+		
+		// 如果++在后面；如num++ +10参与运算
+		// 先参与运算，运算结束后再在自身加1
+		
+		
+		var num2 = 20;
+		++num2;
+		console.log(num2)
+		
+		// 如果++在前面；如++num +10参与运算
+		// 先自身加1，然后再参与运算
+		
+	</script>
+	
+	<script>
+		
+		/*
+		流程控制，代码的执行过程
+		流程控制有三种方式
+		
+		1. 顺序结构：从上到下，从左到右执行的顺序叫做顺序结构
+		2. 分支结构 if语句，if-else语句，if-else if-else if...语句，switch-case语句，三元表达式语句
+		3. 循环结构 while循环，do-while循环，for循环，后期含有一个for-in循环
+		
+		
+		*/
+		
+		/*
+		1. if条件语句
+		
+		if(表达式){
+		代码块
+		}
+		判断表达式的结果是true还是false，如果是true则执行代码块，如果是false，大括号中的代码是不执行的
+		
+		
+		2. if-else 语句
+		
+		if(表达式){
+		代码块1;
+		}else{
+		代码块2;
+		}
+		
+		
+		
+		*/
+		
+//		var age=19;
+//		if(age>=18){
+//			console.log('可以看电影了，嘎嘎...');
+//		}else{
+//			console.log('看什么看，回家写作业去')
+//		}
+		
+		// 提示用户输入年龄
+		var age=parseInt(prompt("请您输入年龄:"));
+		if(age>=18){
+			console.log('可以看电影了，嘎嘎...');
+		}else{
+			console.log('看什么看，回家写作业去');
+		}
+	</script>
+</body>
+</html>

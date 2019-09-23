@@ -1,0 +1,1077 @@
+
+% Default to the notebook output style
+
+    
+
+
+% Inherit from the specified cell style.
+
+
+
+
+    
+\documentclass[11pt]{article}
+
+    
+    
+    \usepackage[T1]{fontenc}
+    % Nicer default font (+ math font) than Computer Modern for most use cases
+    \usepackage{mathpazo}
+
+    % Basic figure setup, for now with no caption control since it's done
+    % automatically by Pandoc (which extracts ![](path) syntax from Markdown).
+    \usepackage{graphicx}
+    % We will generate all images so they have a width \maxwidth. This means
+    % that they will get their normal width if they fit onto the page, but
+    % are scaled down if they would overflow the margins.
+    \makeatletter
+    \def\maxwidth{\ifdim\Gin@nat@width>\linewidth\linewidth
+    \else\Gin@nat@width\fi}
+    \makeatother
+    \let\Oldincludegraphics\includegraphics
+    % Set max figure width to be 80% of text width, for now hardcoded.
+    \renewcommand{\includegraphics}[1]{\Oldincludegraphics[width=.8\maxwidth]{#1}}
+    % Ensure that by default, figures have no caption (until we provide a
+    % proper Figure object with a Caption API and a way to capture that
+    % in the conversion process - todo).
+    \usepackage{caption}
+    \DeclareCaptionLabelFormat{nolabel}{}
+    \captionsetup{labelformat=nolabel}
+
+    \usepackage{adjustbox} % Used to constrain images to a maximum size 
+    \usepackage{xcolor} % Allow colors to be defined
+    \usepackage{enumerate} % Needed for markdown enumerations to work
+    \usepackage{geometry} % Used to adjust the document margins
+    \usepackage{amsmath} % Equations
+    \usepackage{amssymb} % Equations
+    \usepackage{textcomp} % defines textquotesingle
+    % Hack from http://tex.stackexchange.com/a/47451/13684:
+    \AtBeginDocument{%
+        \def\PYZsq{\textquotesingle}% Upright quotes in Pygmentized code
+    }
+    \usepackage{upquote} % Upright quotes for verbatim code
+    \usepackage{eurosym} % defines \euro
+    \usepackage[mathletters]{ucs} % Extended unicode (utf-8) support
+    \usepackage[utf8x]{inputenc} % Allow utf-8 characters in the tex document
+    \usepackage{fancyvrb} % verbatim replacement that allows latex
+    \usepackage{grffile} % extends the file name processing of package graphics 
+                         % to support a larger range 
+    % The hyperref package gives us a pdf with properly built
+    % internal navigation ('pdf bookmarks' for the table of contents,
+    % internal cross-reference links, web links for URLs, etc.)
+    \usepackage{hyperref}
+    \usepackage{longtable} % longtable support required by pandoc >1.10
+    \usepackage{booktabs}  % table support for pandoc > 1.12.2
+    \usepackage[inline]{enumitem} % IRkernel/repr support (it uses the enumerate* environment)
+    \usepackage[normalem]{ulem} % ulem is needed to support strikethroughs (\sout)
+                                % normalem makes italics be italics, not underlines
+    
+
+    
+    
+    % Colors for the hyperref package
+    \definecolor{urlcolor}{rgb}{0,.145,.698}
+    \definecolor{linkcolor}{rgb}{.71,0.21,0.01}
+    \definecolor{citecolor}{rgb}{.12,.54,.11}
+
+    % ANSI colors
+    \definecolor{ansi-black}{HTML}{3E424D}
+    \definecolor{ansi-black-intense}{HTML}{282C36}
+    \definecolor{ansi-red}{HTML}{E75C58}
+    \definecolor{ansi-red-intense}{HTML}{B22B31}
+    \definecolor{ansi-green}{HTML}{00A250}
+    \definecolor{ansi-green-intense}{HTML}{007427}
+    \definecolor{ansi-yellow}{HTML}{DDB62B}
+    \definecolor{ansi-yellow-intense}{HTML}{B27D12}
+    \definecolor{ansi-blue}{HTML}{208FFB}
+    \definecolor{ansi-blue-intense}{HTML}{0065CA}
+    \definecolor{ansi-magenta}{HTML}{D160C4}
+    \definecolor{ansi-magenta-intense}{HTML}{A03196}
+    \definecolor{ansi-cyan}{HTML}{60C6C8}
+    \definecolor{ansi-cyan-intense}{HTML}{258F8F}
+    \definecolor{ansi-white}{HTML}{C5C1B4}
+    \definecolor{ansi-white-intense}{HTML}{A1A6B2}
+
+    % commands and environments needed by pandoc snippets
+    % extracted from the output of `pandoc -s`
+    \providecommand{\tightlist}{%
+      \setlength{\itemsep}{0pt}\setlength{\parskip}{0pt}}
+    \DefineVerbatimEnvironment{Highlighting}{Verbatim}{commandchars=\\\{\}}
+    % Add ',fontsize=\small' for more characters per line
+    \newenvironment{Shaded}{}{}
+    \newcommand{\KeywordTok}[1]{\textcolor[rgb]{0.00,0.44,0.13}{\textbf{{#1}}}}
+    \newcommand{\DataTypeTok}[1]{\textcolor[rgb]{0.56,0.13,0.00}{{#1}}}
+    \newcommand{\DecValTok}[1]{\textcolor[rgb]{0.25,0.63,0.44}{{#1}}}
+    \newcommand{\BaseNTok}[1]{\textcolor[rgb]{0.25,0.63,0.44}{{#1}}}
+    \newcommand{\FloatTok}[1]{\textcolor[rgb]{0.25,0.63,0.44}{{#1}}}
+    \newcommand{\CharTok}[1]{\textcolor[rgb]{0.25,0.44,0.63}{{#1}}}
+    \newcommand{\StringTok}[1]{\textcolor[rgb]{0.25,0.44,0.63}{{#1}}}
+    \newcommand{\CommentTok}[1]{\textcolor[rgb]{0.38,0.63,0.69}{\textit{{#1}}}}
+    \newcommand{\OtherTok}[1]{\textcolor[rgb]{0.00,0.44,0.13}{{#1}}}
+    \newcommand{\AlertTok}[1]{\textcolor[rgb]{1.00,0.00,0.00}{\textbf{{#1}}}}
+    \newcommand{\FunctionTok}[1]{\textcolor[rgb]{0.02,0.16,0.49}{{#1}}}
+    \newcommand{\RegionMarkerTok}[1]{{#1}}
+    \newcommand{\ErrorTok}[1]{\textcolor[rgb]{1.00,0.00,0.00}{\textbf{{#1}}}}
+    \newcommand{\NormalTok}[1]{{#1}}
+    
+    % Additional commands for more recent versions of Pandoc
+    \newcommand{\ConstantTok}[1]{\textcolor[rgb]{0.53,0.00,0.00}{{#1}}}
+    \newcommand{\SpecialCharTok}[1]{\textcolor[rgb]{0.25,0.44,0.63}{{#1}}}
+    \newcommand{\VerbatimStringTok}[1]{\textcolor[rgb]{0.25,0.44,0.63}{{#1}}}
+    \newcommand{\SpecialStringTok}[1]{\textcolor[rgb]{0.73,0.40,0.53}{{#1}}}
+    \newcommand{\ImportTok}[1]{{#1}}
+    \newcommand{\DocumentationTok}[1]{\textcolor[rgb]{0.73,0.13,0.13}{\textit{{#1}}}}
+    \newcommand{\AnnotationTok}[1]{\textcolor[rgb]{0.38,0.63,0.69}{\textbf{\textit{{#1}}}}}
+    \newcommand{\CommentVarTok}[1]{\textcolor[rgb]{0.38,0.63,0.69}{\textbf{\textit{{#1}}}}}
+    \newcommand{\VariableTok}[1]{\textcolor[rgb]{0.10,0.09,0.49}{{#1}}}
+    \newcommand{\ControlFlowTok}[1]{\textcolor[rgb]{0.00,0.44,0.13}{\textbf{{#1}}}}
+    \newcommand{\OperatorTok}[1]{\textcolor[rgb]{0.40,0.40,0.40}{{#1}}}
+    \newcommand{\BuiltInTok}[1]{{#1}}
+    \newcommand{\ExtensionTok}[1]{{#1}}
+    \newcommand{\PreprocessorTok}[1]{\textcolor[rgb]{0.74,0.48,0.00}{{#1}}}
+    \newcommand{\AttributeTok}[1]{\textcolor[rgb]{0.49,0.56,0.16}{{#1}}}
+    \newcommand{\InformationTok}[1]{\textcolor[rgb]{0.38,0.63,0.69}{\textbf{\textit{{#1}}}}}
+    \newcommand{\WarningTok}[1]{\textcolor[rgb]{0.38,0.63,0.69}{\textbf{\textit{{#1}}}}}
+    
+    
+    % Define a nice break command that doesn't care if a line doesn't already
+    % exist.
+    \def\br{\hspace*{\fill} \\* }
+    % Math Jax compatability definitions
+    \def\gt{>}
+    \def\lt{<}
+    % Document parameters
+    \title{Exercise01\_??????}
+    
+    
+    
+
+    % Pygments definitions
+    
+\makeatletter
+\def\PY@reset{\let\PY@it=\relax \let\PY@bf=\relax%
+    \let\PY@ul=\relax \let\PY@tc=\relax%
+    \let\PY@bc=\relax \let\PY@ff=\relax}
+\def\PY@tok#1{\csname PY@tok@#1\endcsname}
+\def\PY@toks#1+{\ifx\relax#1\empty\else%
+    \PY@tok{#1}\expandafter\PY@toks\fi}
+\def\PY@do#1{\PY@bc{\PY@tc{\PY@ul{%
+    \PY@it{\PY@bf{\PY@ff{#1}}}}}}}
+\def\PY#1#2{\PY@reset\PY@toks#1+\relax+\PY@do{#2}}
+
+\expandafter\def\csname PY@tok@w\endcsname{\def\PY@tc##1{\textcolor[rgb]{0.73,0.73,0.73}{##1}}}
+\expandafter\def\csname PY@tok@c\endcsname{\let\PY@it=\textit\def\PY@tc##1{\textcolor[rgb]{0.25,0.50,0.50}{##1}}}
+\expandafter\def\csname PY@tok@cp\endcsname{\def\PY@tc##1{\textcolor[rgb]{0.74,0.48,0.00}{##1}}}
+\expandafter\def\csname PY@tok@k\endcsname{\let\PY@bf=\textbf\def\PY@tc##1{\textcolor[rgb]{0.00,0.50,0.00}{##1}}}
+\expandafter\def\csname PY@tok@kp\endcsname{\def\PY@tc##1{\textcolor[rgb]{0.00,0.50,0.00}{##1}}}
+\expandafter\def\csname PY@tok@kt\endcsname{\def\PY@tc##1{\textcolor[rgb]{0.69,0.00,0.25}{##1}}}
+\expandafter\def\csname PY@tok@o\endcsname{\def\PY@tc##1{\textcolor[rgb]{0.40,0.40,0.40}{##1}}}
+\expandafter\def\csname PY@tok@ow\endcsname{\let\PY@bf=\textbf\def\PY@tc##1{\textcolor[rgb]{0.67,0.13,1.00}{##1}}}
+\expandafter\def\csname PY@tok@nb\endcsname{\def\PY@tc##1{\textcolor[rgb]{0.00,0.50,0.00}{##1}}}
+\expandafter\def\csname PY@tok@nf\endcsname{\def\PY@tc##1{\textcolor[rgb]{0.00,0.00,1.00}{##1}}}
+\expandafter\def\csname PY@tok@nc\endcsname{\let\PY@bf=\textbf\def\PY@tc##1{\textcolor[rgb]{0.00,0.00,1.00}{##1}}}
+\expandafter\def\csname PY@tok@nn\endcsname{\let\PY@bf=\textbf\def\PY@tc##1{\textcolor[rgb]{0.00,0.00,1.00}{##1}}}
+\expandafter\def\csname PY@tok@ne\endcsname{\let\PY@bf=\textbf\def\PY@tc##1{\textcolor[rgb]{0.82,0.25,0.23}{##1}}}
+\expandafter\def\csname PY@tok@nv\endcsname{\def\PY@tc##1{\textcolor[rgb]{0.10,0.09,0.49}{##1}}}
+\expandafter\def\csname PY@tok@no\endcsname{\def\PY@tc##1{\textcolor[rgb]{0.53,0.00,0.00}{##1}}}
+\expandafter\def\csname PY@tok@nl\endcsname{\def\PY@tc##1{\textcolor[rgb]{0.63,0.63,0.00}{##1}}}
+\expandafter\def\csname PY@tok@ni\endcsname{\let\PY@bf=\textbf\def\PY@tc##1{\textcolor[rgb]{0.60,0.60,0.60}{##1}}}
+\expandafter\def\csname PY@tok@na\endcsname{\def\PY@tc##1{\textcolor[rgb]{0.49,0.56,0.16}{##1}}}
+\expandafter\def\csname PY@tok@nt\endcsname{\let\PY@bf=\textbf\def\PY@tc##1{\textcolor[rgb]{0.00,0.50,0.00}{##1}}}
+\expandafter\def\csname PY@tok@nd\endcsname{\def\PY@tc##1{\textcolor[rgb]{0.67,0.13,1.00}{##1}}}
+\expandafter\def\csname PY@tok@s\endcsname{\def\PY@tc##1{\textcolor[rgb]{0.73,0.13,0.13}{##1}}}
+\expandafter\def\csname PY@tok@sd\endcsname{\let\PY@it=\textit\def\PY@tc##1{\textcolor[rgb]{0.73,0.13,0.13}{##1}}}
+\expandafter\def\csname PY@tok@si\endcsname{\let\PY@bf=\textbf\def\PY@tc##1{\textcolor[rgb]{0.73,0.40,0.53}{##1}}}
+\expandafter\def\csname PY@tok@se\endcsname{\let\PY@bf=\textbf\def\PY@tc##1{\textcolor[rgb]{0.73,0.40,0.13}{##1}}}
+\expandafter\def\csname PY@tok@sr\endcsname{\def\PY@tc##1{\textcolor[rgb]{0.73,0.40,0.53}{##1}}}
+\expandafter\def\csname PY@tok@ss\endcsname{\def\PY@tc##1{\textcolor[rgb]{0.10,0.09,0.49}{##1}}}
+\expandafter\def\csname PY@tok@sx\endcsname{\def\PY@tc##1{\textcolor[rgb]{0.00,0.50,0.00}{##1}}}
+\expandafter\def\csname PY@tok@m\endcsname{\def\PY@tc##1{\textcolor[rgb]{0.40,0.40,0.40}{##1}}}
+\expandafter\def\csname PY@tok@gh\endcsname{\let\PY@bf=\textbf\def\PY@tc##1{\textcolor[rgb]{0.00,0.00,0.50}{##1}}}
+\expandafter\def\csname PY@tok@gu\endcsname{\let\PY@bf=\textbf\def\PY@tc##1{\textcolor[rgb]{0.50,0.00,0.50}{##1}}}
+\expandafter\def\csname PY@tok@gd\endcsname{\def\PY@tc##1{\textcolor[rgb]{0.63,0.00,0.00}{##1}}}
+\expandafter\def\csname PY@tok@gi\endcsname{\def\PY@tc##1{\textcolor[rgb]{0.00,0.63,0.00}{##1}}}
+\expandafter\def\csname PY@tok@gr\endcsname{\def\PY@tc##1{\textcolor[rgb]{1.00,0.00,0.00}{##1}}}
+\expandafter\def\csname PY@tok@ge\endcsname{\let\PY@it=\textit}
+\expandafter\def\csname PY@tok@gs\endcsname{\let\PY@bf=\textbf}
+\expandafter\def\csname PY@tok@gp\endcsname{\let\PY@bf=\textbf\def\PY@tc##1{\textcolor[rgb]{0.00,0.00,0.50}{##1}}}
+\expandafter\def\csname PY@tok@go\endcsname{\def\PY@tc##1{\textcolor[rgb]{0.53,0.53,0.53}{##1}}}
+\expandafter\def\csname PY@tok@gt\endcsname{\def\PY@tc##1{\textcolor[rgb]{0.00,0.27,0.87}{##1}}}
+\expandafter\def\csname PY@tok@err\endcsname{\def\PY@bc##1{\setlength{\fboxsep}{0pt}\fcolorbox[rgb]{1.00,0.00,0.00}{1,1,1}{\strut ##1}}}
+\expandafter\def\csname PY@tok@kc\endcsname{\let\PY@bf=\textbf\def\PY@tc##1{\textcolor[rgb]{0.00,0.50,0.00}{##1}}}
+\expandafter\def\csname PY@tok@kd\endcsname{\let\PY@bf=\textbf\def\PY@tc##1{\textcolor[rgb]{0.00,0.50,0.00}{##1}}}
+\expandafter\def\csname PY@tok@kn\endcsname{\let\PY@bf=\textbf\def\PY@tc##1{\textcolor[rgb]{0.00,0.50,0.00}{##1}}}
+\expandafter\def\csname PY@tok@kr\endcsname{\let\PY@bf=\textbf\def\PY@tc##1{\textcolor[rgb]{0.00,0.50,0.00}{##1}}}
+\expandafter\def\csname PY@tok@bp\endcsname{\def\PY@tc##1{\textcolor[rgb]{0.00,0.50,0.00}{##1}}}
+\expandafter\def\csname PY@tok@fm\endcsname{\def\PY@tc##1{\textcolor[rgb]{0.00,0.00,1.00}{##1}}}
+\expandafter\def\csname PY@tok@vc\endcsname{\def\PY@tc##1{\textcolor[rgb]{0.10,0.09,0.49}{##1}}}
+\expandafter\def\csname PY@tok@vg\endcsname{\def\PY@tc##1{\textcolor[rgb]{0.10,0.09,0.49}{##1}}}
+\expandafter\def\csname PY@tok@vi\endcsname{\def\PY@tc##1{\textcolor[rgb]{0.10,0.09,0.49}{##1}}}
+\expandafter\def\csname PY@tok@vm\endcsname{\def\PY@tc##1{\textcolor[rgb]{0.10,0.09,0.49}{##1}}}
+\expandafter\def\csname PY@tok@sa\endcsname{\def\PY@tc##1{\textcolor[rgb]{0.73,0.13,0.13}{##1}}}
+\expandafter\def\csname PY@tok@sb\endcsname{\def\PY@tc##1{\textcolor[rgb]{0.73,0.13,0.13}{##1}}}
+\expandafter\def\csname PY@tok@sc\endcsname{\def\PY@tc##1{\textcolor[rgb]{0.73,0.13,0.13}{##1}}}
+\expandafter\def\csname PY@tok@dl\endcsname{\def\PY@tc##1{\textcolor[rgb]{0.73,0.13,0.13}{##1}}}
+\expandafter\def\csname PY@tok@s2\endcsname{\def\PY@tc##1{\textcolor[rgb]{0.73,0.13,0.13}{##1}}}
+\expandafter\def\csname PY@tok@sh\endcsname{\def\PY@tc##1{\textcolor[rgb]{0.73,0.13,0.13}{##1}}}
+\expandafter\def\csname PY@tok@s1\endcsname{\def\PY@tc##1{\textcolor[rgb]{0.73,0.13,0.13}{##1}}}
+\expandafter\def\csname PY@tok@mb\endcsname{\def\PY@tc##1{\textcolor[rgb]{0.40,0.40,0.40}{##1}}}
+\expandafter\def\csname PY@tok@mf\endcsname{\def\PY@tc##1{\textcolor[rgb]{0.40,0.40,0.40}{##1}}}
+\expandafter\def\csname PY@tok@mh\endcsname{\def\PY@tc##1{\textcolor[rgb]{0.40,0.40,0.40}{##1}}}
+\expandafter\def\csname PY@tok@mi\endcsname{\def\PY@tc##1{\textcolor[rgb]{0.40,0.40,0.40}{##1}}}
+\expandafter\def\csname PY@tok@il\endcsname{\def\PY@tc##1{\textcolor[rgb]{0.40,0.40,0.40}{##1}}}
+\expandafter\def\csname PY@tok@mo\endcsname{\def\PY@tc##1{\textcolor[rgb]{0.40,0.40,0.40}{##1}}}
+\expandafter\def\csname PY@tok@ch\endcsname{\let\PY@it=\textit\def\PY@tc##1{\textcolor[rgb]{0.25,0.50,0.50}{##1}}}
+\expandafter\def\csname PY@tok@cm\endcsname{\let\PY@it=\textit\def\PY@tc##1{\textcolor[rgb]{0.25,0.50,0.50}{##1}}}
+\expandafter\def\csname PY@tok@cpf\endcsname{\let\PY@it=\textit\def\PY@tc##1{\textcolor[rgb]{0.25,0.50,0.50}{##1}}}
+\expandafter\def\csname PY@tok@c1\endcsname{\let\PY@it=\textit\def\PY@tc##1{\textcolor[rgb]{0.25,0.50,0.50}{##1}}}
+\expandafter\def\csname PY@tok@cs\endcsname{\let\PY@it=\textit\def\PY@tc##1{\textcolor[rgb]{0.25,0.50,0.50}{##1}}}
+
+\def\PYZbs{\char`\\}
+\def\PYZus{\char`\_}
+\def\PYZob{\char`\{}
+\def\PYZcb{\char`\}}
+\def\PYZca{\char`\^}
+\def\PYZam{\char`\&}
+\def\PYZlt{\char`\<}
+\def\PYZgt{\char`\>}
+\def\PYZsh{\char`\#}
+\def\PYZpc{\char`\%}
+\def\PYZdl{\char`\$}
+\def\PYZhy{\char`\-}
+\def\PYZsq{\char`\'}
+\def\PYZdq{\char`\"}
+\def\PYZti{\char`\~}
+% for compatibility with earlier versions
+\def\PYZat{@}
+\def\PYZlb{[}
+\def\PYZrb{]}
+\makeatother
+
+
+    % Exact colors from NB
+    \definecolor{incolor}{rgb}{0.0, 0.0, 0.5}
+    \definecolor{outcolor}{rgb}{0.545, 0.0, 0.0}
+
+
+
+    
+    % Prevent overflowing lines due to hard-to-break entities
+    \sloppy 
+    % Setup hyperref package
+    \hypersetup{
+      breaklinks=true,  % so long urls are correctly broken across lines
+      colorlinks=true,
+      urlcolor=urlcolor,
+      linkcolor=linkcolor,
+      citecolor=citecolor,
+      }
+    % Slightly bigger margins than the latex defaults
+    
+    \geometry{verbose,tmargin=1in,bmargin=1in,lmargin=1in,rmargin=1in}
+    
+    
+
+    \begin{document}
+    
+    
+    \maketitle
+    
+    
+
+    
+    \subsection{正则表达式入门}\label{ux6b63ux5219ux8868ux8fbeux5f0fux5165ux95e8}
+
+\begin{itemize}
+\item
+  就是对字符串的一种逻辑公式。用事先定义好的一些特定字符，
+\item
+  以及这些字符的组合，组成一个规则字符串，用这个字符串来表达对字符串的一种
+  过滤
+\item
+  目的：
+\item
+  判断字符串是否符合正则表达式的逻辑
+\item
+  通过正则表达式从指定的字符串中获取我们需要的特定部分
+\end{itemize}
+
+\paragraph{边界匹配(不消耗待匹配字符串中的字符)}\label{ux8fb9ux754cux5339ux914dux4e0dux6d88ux8017ux5f85ux5339ux914dux5b57ux7b26ux4e32ux4e2dux7684ux5b57ux7b26}
+
+\begin{verbatim}
+*  ^ 匹配字符串开头               ^abc       abc
+*  $ 匹配字符串末尾
+     在多行模式中匹配每一行的末尾  abc$      abc
+*  \A 仅匹配字符串的开头           \Aabc     abc
+*  \Z 仅匹配字符串的末尾           abc\Z     abc
+*  \b 匹配\w和\W之间               a\b!bc    a!bc
+*  \B {^\b}                        a\Bbc     abc
+\end{verbatim}
+
+\paragraph{逻辑分组}\label{ux903bux8f91ux5206ux7ec4}
+
+\begin{verbatim}
+*  | 用管道匹配多个分组
+   如 r'Batman|Tina Fey'将匹配'Batman'或'Tina Fey'。
+   即左右的表达式各匹配一个，他总是先尝试匹配左边的表达式，一旦匹配成功则跳过        匹配
+   右边的表达式，如果|没有被包括在()则它的范围是整个正则表达式
+
+
+-  ？用问号实现可选匹配 
+   就是说，不论这段文本在不在，正则表达式都会认为匹配 
+   
+   
+-  * 用星号匹配零次或多次
+   意味着“匹配零次或多次”，即星号之前的分组，可以在文本中
+   出现任意次。它可以完全不存在，或一次又一次地重复
+
+
+-  + 加号匹配一次或多次
+   *意味着“匹配零次或多次”，+（加号）则意味着“匹配一次或多次”。星号不要分        组出现在匹配的字符串中，但加号不同，加号前面的分组必须“至少出现一 次”。这不是可选的
+
+
+-  {} 用花括号匹配特定次数
+   如果想要一个分组重复特定次数，就在正则表达式中该分组的后面，跟上花括
+号包围的数字。例如，正则表达式(Ha){3}将匹配字符串'HaHaHa'，但不会匹配'HaHa'，
+因为后者只重复了(Ha)分组两次。除了一个数字，还可以指定一个范围，即在花括号中写下一个最小值、一个逗号和一个最大值。例如例如，正则表达式(Ha){3,5}将匹配'HaHaHa'、'HaHaHaHa'和'HaHaHaHaHa'也可以不写花括号中的第一个或第二个数字，不限定最小值或最大值。例如，(Ha){3,}将匹配 3 次或更多次实例，(Ha){,5}将匹配 0 到 5 次实例。花括号让正则表达式更简短
+\end{verbatim}
+
+    \begin{Verbatim}[commandchars=\\\{\}]
+{\color{incolor}In [{\color{incolor}3}]:} \PY{k+kn}{import} \PY{n+nn}{re}
+        
+        \PY{n}{str\PYZus{}eg} \PY{o}{=} \PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{11abcsdbb5s\PYZam{}as*sddabc}\PY{l+s+s1}{\PYZsq{}}
+        \PY{c+c1}{\PYZsh{}rst = re.match(\PYZdq{}abc\PYZdq{},str\PYZus{}eg)}
+        
+        \PY{c+c1}{\PYZsh{}rst = re.search(\PYZdq{}abc\PYZdq{},str\PYZus{}eg)}
+        
+        \PY{c+c1}{\PYZsh{} 找出所有的匹配结果}
+        \PY{n}{rst} \PY{o}{=} \PY{n}{re}\PY{o}{.}\PY{n}{findall}\PY{p}{(}\PY{l+s+s2}{\PYZdq{}}\PY{l+s+s2}{abc}\PY{l+s+s2}{\PYZdq{}}\PY{p}{,}\PY{n}{str\PYZus{}eg}\PY{p}{)}
+        \PY{n+nb}{print}\PY{p}{(}\PY{n}{rst}\PY{p}{)}
+\end{Verbatim}
+
+
+    \begin{Verbatim}[commandchars=\\\{\}]
+['abc', 'abc']
+
+    \end{Verbatim}
+
+    \begin{Verbatim}[commandchars=\\\{\}]
+{\color{incolor}In [{\color{incolor}7}]:} \PY{k+kn}{import} \PY{n+nn}{re}
+        
+        \PY{n}{str\PYZus{}eg} \PY{o}{=} \PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{zoooo}\PY{l+s+s1}{\PYZsq{}}
+        \PY{n}{rst} \PY{o}{=} \PY{n}{re}\PY{o}{.}\PY{n}{match}\PY{p}{(}\PY{l+s+s2}{\PYZdq{}}\PY{l+s+s2}{zo*}\PY{l+s+s2}{\PYZdq{}}\PY{p}{,}\PY{n}{str\PYZus{}eg}\PY{p}{)}
+        
+        \PY{c+c1}{\PYZsh{}rst = re.search(\PYZdq{}abc\PYZdq{},str\PYZus{}eg)}
+        
+        \PY{c+c1}{\PYZsh{} 找出所有的匹配结果}
+        \PY{c+c1}{\PYZsh{}rst = re.findall(\PYZdq{}abc\PYZdq{},str\PYZus{}eg)}
+        \PY{n+nb}{print}\PY{p}{(}\PY{n}{rst}\PY{p}{)}
+        
+        
+        \PY{c+c1}{\PYZsh{}  *号为贪婪匹配}
+        \PY{c+c1}{\PYZsh{}  ？号为非贪婪匹配}
+\end{Verbatim}
+
+
+    \begin{Verbatim}[commandchars=\\\{\}]
+<\_sre.SRE\_Match object; span=(0, 5), match='zoooo'>
+
+    \end{Verbatim}
+
+    \begin{Verbatim}[commandchars=\\\{\}]
+{\color{incolor}In [{\color{incolor}46}]:} \PY{l+s+sd}{\PYZdq{}\PYZdq{}\PYZdq{}}
+         
+         \PY{l+s+sd}{验证输入用户名和QQ号是否有效并给出对应的提示信息}
+         
+         \PY{l+s+sd}{要求：}
+         \PY{l+s+sd}{用户名必须由字母、数字或下划线构成且长度在6\PYZti{}20个字符之间}
+         \PY{l+s+sd}{QQ号是5\PYZti{}12的数字且首位不能为0}
+         
+         \PY{l+s+sd}{\PYZdq{}\PYZdq{}\PYZdq{}}
+         
+         \PY{k+kn}{import} \PY{n+nn}{re}
+         
+         
+         \PY{k}{def} \PY{n+nf}{main}\PY{p}{(}\PY{p}{)}\PY{p}{:}
+             \PY{n}{username} \PY{o}{=} \PY{n+nb}{input}\PY{p}{(}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{请输入用户名: }\PY{l+s+s1}{\PYZsq{}}\PY{p}{)}
+             \PY{n}{qq} \PY{o}{=} \PY{n+nb}{input}\PY{p}{(}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{请输入QQ号: }\PY{l+s+s1}{\PYZsq{}}\PY{p}{)}
+             \PY{n}{m1} \PY{o}{=} \PY{n}{re}\PY{o}{.}\PY{n}{match}\PY{p}{(}\PY{l+s+sa}{r}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{\PYZca{}[0\PYZhy{}9a\PYZhy{}zA\PYZhy{}Z\PYZus{}]}\PY{l+s+s1}{\PYZob{}}\PY{l+s+s1}{6,20\PYZcb{}\PYZdl{}}\PY{l+s+s1}{\PYZsq{}}\PY{p}{,} \PY{n}{username}\PY{p}{)}
+             \PY{k}{if} \PY{o+ow}{not} \PY{n}{m1}\PY{p}{:}
+                 \PY{n+nb}{print}\PY{p}{(}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{请输入有效的用户名.}\PY{l+s+s1}{\PYZsq{}}\PY{p}{)}
+             \PY{n}{m2} \PY{o}{=} \PY{n}{re}\PY{o}{.}\PY{n}{match}\PY{p}{(}\PY{l+s+sa}{r}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{\PYZca{}[1\PYZhy{}9]}\PY{l+s+s1}{\PYZbs{}}\PY{l+s+s1}{d}\PY{l+s+s1}{\PYZob{}}\PY{l+s+s1}{4,11\PYZcb{}\PYZdl{}}\PY{l+s+s1}{\PYZsq{}}\PY{p}{,} \PY{n}{qq}\PY{p}{)}
+             \PY{k}{if} \PY{o+ow}{not} \PY{n}{m2}\PY{p}{:}
+                 \PY{n+nb}{print}\PY{p}{(}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{请输入有效的QQ号.}\PY{l+s+s1}{\PYZsq{}}\PY{p}{)}
+             \PY{k}{if} \PY{n}{m1} \PY{o+ow}{and} \PY{n}{m2}\PY{p}{:}
+                 \PY{n+nb}{print}\PY{p}{(}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{你输入的信息是有效的!}\PY{l+s+s1}{\PYZsq{}}\PY{p}{)}
+         
+         
+         \PY{k}{if} \PY{n+nv+vm}{\PYZus{}\PYZus{}name\PYZus{}\PYZus{}} \PY{o}{==} \PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{\PYZus{}\PYZus{}main\PYZus{}\PYZus{}}\PY{l+s+s1}{\PYZsq{}}\PY{p}{:}
+             \PY{n}{main}\PY{p}{(}\PY{p}{)}
+\end{Verbatim}
+
+
+    \begin{Verbatim}[commandchars=\\\{\}]
+请输入用户名: sdfsdfsd
+请输入QQ号: 877055656
+你输入的信息是有效的!
+
+    \end{Verbatim}
+
+    \begin{Verbatim}[commandchars=\\\{\}]
+{\color{incolor}In [{\color{incolor}12}]:} \PY{k+kn}{import} \PY{n+nn}{re}
+         
+         
+         \PY{k}{def} \PY{n+nf}{main}\PY{p}{(}\PY{p}{)}\PY{p}{:}
+             \PY{c+c1}{\PYZsh{} 创建正则表达式对象 使用了前瞻和回顾来保证手机号前后不应该出现数字}
+             \PY{n}{pattern} \PY{o}{=} \PY{n}{re}\PY{o}{.}\PY{n}{compile}\PY{p}{(}\PY{l+s+sa}{r}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{(?\PYZlt{}=}\PY{l+s+s1}{\PYZbs{}}\PY{l+s+s1}{D)(1[38]}\PY{l+s+s1}{\PYZbs{}}\PY{l+s+s1}{d}\PY{l+s+si}{\PYZob{}9\PYZcb{}}\PY{l+s+s1}{|14[57]}\PY{l+s+s1}{\PYZbs{}}\PY{l+s+s1}{d}\PY{l+s+si}{\PYZob{}8\PYZcb{}}\PY{l+s+s1}{|15[0\PYZhy{}35\PYZhy{}9]}\PY{l+s+s1}{\PYZbs{}}\PY{l+s+s1}{d}\PY{l+s+si}{\PYZob{}8\PYZcb{}}\PY{l+s+s1}{|17[678]}\PY{l+s+s1}{\PYZbs{}}\PY{l+s+s1}{d}\PY{l+s+si}{\PYZob{}8\PYZcb{}}\PY{l+s+s1}{)(?=}\PY{l+s+s1}{\PYZbs{}}\PY{l+s+s1}{D)}\PY{l+s+s1}{\PYZsq{}}\PY{p}{)}
+             \PY{n}{sentence} \PY{o}{=} \PY{l+s+s1}{\PYZsq{}\PYZsq{}\PYZsq{}}
+         \PY{l+s+s1}{    重要的事情说8130123456789遍，我的手机号是13512346789这个靓号，}
+         \PY{l+s+s1}{    不是15600998765，也是110或119，王大锤的手机号才是15600998765。}
+         \PY{l+s+s1}{    }\PY{l+s+s1}{\PYZsq{}\PYZsq{}\PYZsq{}}
+             \PY{c+c1}{\PYZsh{} 查找所有匹配并保存到一个列表中}
+             \PY{n}{mylist} \PY{o}{=} \PY{n}{re}\PY{o}{.}\PY{n}{findall}\PY{p}{(}\PY{n}{pattern}\PY{p}{,} \PY{n}{sentence}\PY{p}{)}
+             \PY{n+nb}{print}\PY{p}{(}\PY{n}{mylist}\PY{p}{)}
+             \PY{n+nb}{print}\PY{p}{(}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{\PYZhy{}\PYZhy{}\PYZhy{}\PYZhy{}\PYZhy{}\PYZhy{}\PYZhy{}\PYZhy{}华丽的分隔线\PYZhy{}\PYZhy{}\PYZhy{}\PYZhy{}\PYZhy{}\PYZhy{}\PYZhy{}\PYZhy{}}\PY{l+s+s1}{\PYZsq{}}\PY{p}{)}
+             \PY{c+c1}{\PYZsh{} 通过迭代器取出匹配对象并获得匹配的内容}
+             \PY{k}{for} \PY{n}{temp} \PY{o+ow}{in} \PY{n}{pattern}\PY{o}{.}\PY{n}{finditer}\PY{p}{(}\PY{n}{sentence}\PY{p}{)}\PY{p}{:}
+                 \PY{n+nb}{print}\PY{p}{(}\PY{n}{temp}\PY{o}{.}\PY{n}{group}\PY{p}{(}\PY{p}{)}\PY{p}{)}
+             \PY{n+nb}{print}\PY{p}{(}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{\PYZhy{}\PYZhy{}\PYZhy{}\PYZhy{}\PYZhy{}\PYZhy{}\PYZhy{}\PYZhy{}华丽的分隔线\PYZhy{}\PYZhy{}\PYZhy{}\PYZhy{}\PYZhy{}\PYZhy{}\PYZhy{}\PYZhy{}}\PY{l+s+s1}{\PYZsq{}}\PY{p}{)}
+             \PY{c+c1}{\PYZsh{} 通过search函数指定搜索位置找出所有匹配}
+             \PY{n}{m} \PY{o}{=} \PY{n}{pattern}\PY{o}{.}\PY{n}{search}\PY{p}{(}\PY{n}{sentence}\PY{p}{)}
+             \PY{k}{while} \PY{n}{m}\PY{p}{:}
+                 \PY{n+nb}{print}\PY{p}{(}\PY{n}{m}\PY{o}{.}\PY{n}{group}\PY{p}{(}\PY{p}{)}\PY{p}{)}
+                 \PY{n}{m} \PY{o}{=} \PY{n}{pattern}\PY{o}{.}\PY{n}{search}\PY{p}{(}\PY{n}{sentence}\PY{p}{,} \PY{n}{m}\PY{o}{.}\PY{n}{end}\PY{p}{(}\PY{p}{)}\PY{p}{)}
+         
+         
+         \PY{k}{if} \PY{n+nv+vm}{\PYZus{}\PYZus{}name\PYZus{}\PYZus{}} \PY{o}{==} \PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{\PYZus{}\PYZus{}main\PYZus{}\PYZus{}}\PY{l+s+s1}{\PYZsq{}}\PY{p}{:}
+             \PY{n}{main}\PY{p}{(}\PY{p}{)}
+\end{Verbatim}
+
+
+    \begin{Verbatim}[commandchars=\\\{\}]
+['13512346789', '15600998765', '15600998765']
+--------华丽的分隔线--------
+13512346789
+15600998765
+15600998765
+--------华丽的分隔线--------
+13512346789
+15600998765
+15600998765
+
+    \end{Verbatim}
+
+    \begin{Verbatim}[commandchars=\\\{\}]
+{\color{incolor}In [{\color{incolor}13}]:} \PY{k+kn}{import} \PY{n+nn}{re}
+         
+         
+         \PY{k}{def} \PY{n+nf}{main}\PY{p}{(}\PY{p}{)}\PY{p}{:}
+             \PY{n}{sentence} \PY{o}{=} \PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{你丫是傻叉吗? 我操你大爷的. Fuck you.}\PY{l+s+s1}{\PYZsq{}}
+             \PY{n}{purified} \PY{o}{=} \PY{n}{re}\PY{o}{.}\PY{n}{sub}\PY{p}{(}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{[操肏艹草曹]|fuck|shit|傻[比屄逼叉缺吊屌]|煞笔}\PY{l+s+s1}{\PYZsq{}}\PY{p}{,}
+                               \PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{*}\PY{l+s+s1}{\PYZsq{}}\PY{p}{,} \PY{n}{sentence}\PY{p}{,} \PY{n}{flags}\PY{o}{=}\PY{n}{re}\PY{o}{.}\PY{n}{IGNORECASE}\PY{p}{)}
+             \PY{n+nb}{print}\PY{p}{(}\PY{n}{purified}\PY{p}{)}
+         
+         
+         \PY{k}{if} \PY{n+nv+vm}{\PYZus{}\PYZus{}name\PYZus{}\PYZus{}} \PY{o}{==} \PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{\PYZus{}\PYZus{}main\PYZus{}\PYZus{}}\PY{l+s+s1}{\PYZsq{}}\PY{p}{:}
+             \PY{n}{main}\PY{p}{(}\PY{p}{)}
+\end{Verbatim}
+
+
+    \begin{Verbatim}[commandchars=\\\{\}]
+你丫是*吗? 我*你大爷的. * you.
+
+    \end{Verbatim}
+
+    \paragraph{利用正则表达式查找文本模式}\label{ux5229ux7528ux6b63ux5219ux8868ux8fbeux5f0fux67e5ux627eux6587ux672cux6a21ux5f0f}
+
+    \begin{Verbatim}[commandchars=\\\{\}]
+{\color{incolor}In [{\color{incolor}5}]:} \PY{c+c1}{\PYZsh{} 匹配电话号码}
+        \PY{k+kn}{import} \PY{n+nn}{re}
+        \PY{n}{str1} \PY{o}{=} \PY{l+s+s2}{\PYZdq{}}\PY{l+s+s2}{jasdhk6545546\PYZhy{}5655\PYZhy{}565sa5545we(415)\PYZhy{}555\PYZhy{}4242wujkdkh945\PYZhy{}655\PYZhy{}7895edesdjjjlS}\PY{l+s+s2}{\PYZdq{}}
+        \PY{n}{phone\PYZus{}num} \PY{o}{=} \PY{n}{re}\PY{o}{.}\PY{n}{compile}\PY{p}{(}\PY{l+s+sa}{r}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{\PYZbs{}}\PY{l+s+s1}{d}\PY{l+s+si}{\PYZob{}3\PYZcb{}}\PY{l+s+s1}{\PYZhy{}}\PY{l+s+s1}{\PYZbs{}}\PY{l+s+s1}{d}\PY{l+s+si}{\PYZob{}3\PYZcb{}}\PY{l+s+s1}{\PYZhy{}}\PY{l+s+s1}{\PYZbs{}}\PY{l+s+s1}{d}\PY{l+s+si}{\PYZob{}4\PYZcb{}}\PY{l+s+s1}{\PYZsq{}}\PY{p}{)}
+        \PY{n}{mo} \PY{o}{=} \PY{n}{phone\PYZus{}num}\PY{o}{.}\PY{n}{search}\PY{p}{(}\PY{n}{str1}\PY{p}{)}
+        \PY{n+nb}{print}\PY{p}{(}\PY{l+s+s2}{\PYZdq{}}\PY{l+s+s2}{找到电话号码了:}\PY{l+s+s2}{\PYZdq{}}\PY{o}{+} \PY{n}{mo}\PY{o}{.}\PY{n}{group}\PY{p}{(}\PY{p}{)}\PY{p}{)}
+\end{Verbatim}
+
+
+    \begin{Verbatim}[commandchars=\\\{\}]
+找到电话号码了:945-655-7895
+
+    \end{Verbatim}
+
+    \subsubsection{匹配 Regex 对象}\label{ux5339ux914d-regex-ux5bf9ux8c61}
+
+\begin{itemize}
+\tightlist
+\item
+  Regex
+  对象的search()方法查找传入的字符串，寻找该正则表达式的所有匹配。如
+  果字符串中没有找到该正则表达式模式，search()方法将返回None。如果找到了该模式，
+  search()方法将返回一个 Match 对象。Match 对象有一个
+  group()方法，它返回被查找字符串中实际匹配的文本
+\end{itemize}
+
+\paragraph{\texorpdfstring{关于正则表达式传入原始字符串及\的转义
+-}{关于正则表达式传入原始字符串及-}}\label{ux5173ux4e8eux6b63ux5219ux8868ux8fbeux5f0fux4f20ux5165ux539fux59cbux5b57ux7b26ux4e32ux53ca-}
+
+\begin{verbatim}
+向 re.compile()传递原始字符串
+
+回忆一下，Python 中转义字符使用倒斜杠（\）。字符串'\n'表示一个换行字符，
+而不是倒斜杠加上一个小写的 n。你需要输入转义字符\\，才能打印出一个倒斜杠。
+所以'\\n'表示一个倒斜杠加上一个小写的 n。但是，通过在字符串的第一个引号之
+前加上 r，可以将该字符串标记为原始字符串，它不包括转义字符。
+因为正则表达式常常使用倒斜杠，向 re.compile()函数传入原始字符串就很方
+便 ， 而 不 是 输 入 额 外 得 到 斜 杠 。 输 入 r'\d\d\d-\d\d\d-\d\d\d\d' ， 比 输 入
+'\\d\\d\\d-\\d\\d\\d-\\d\\d\\d\\d'要容易得多。
+\end{verbatim}
+
+\subsection{\#\#
+正则的一般步骤}\label{ux6b63ux5219ux7684ux4e00ux822cux6b65ux9aa4}
+
+\begin{verbatim}
+* 1．用 import re 导入正则表达式模块。
+* 2．用 re.compile()函数创建一个 Regex 对象（记得使用原始字符串）。
+* 3．向 Regex 对象的 search()方法传入想查找的字符串。它返回一个 Match 对象。
+* 4．调用 Match 对象的 group()方法，返回实际匹配文本的字符串。
+\end{verbatim}
+
+    \begin{Verbatim}[commandchars=\\\{\}]
+{\color{incolor}In [{\color{incolor}7}]:} \PY{c+c1}{\PYZsh{} 1() 用括号分组}
+        \PY{c+c1}{\PYZsh{} 正则表达式字符串中的第一对括号是第 1 组。第二对括号是第 2 组。向 group()}
+        \PY{c+c1}{\PYZsh{} 匹配对象方法传入整数 1 或 2，就可以取得匹配文本的不同部分。向 group()方法传}
+        \PY{c+c1}{\PYZsh{} 入 0 或不传入参数，将返回整个匹配的文本}
+        
+        \PY{k+kn}{import} \PY{n+nn}{re} 
+        \PY{n}{phone\PYZus{}num\PYZus{}regex} \PY{o}{=} \PY{n}{re}\PY{o}{.}\PY{n}{compile}\PY{p}{(}\PY{l+s+sa}{r}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{(}\PY{l+s+s1}{\PYZbs{}}\PY{l+s+s1}{d}\PY{l+s+si}{\PYZob{}3\PYZcb{}}\PY{l+s+s1}{)\PYZhy{}(}\PY{l+s+s1}{\PYZbs{}}\PY{l+s+s1}{d}\PY{l+s+si}{\PYZob{}3\PYZcb{}}\PY{l+s+s1}{\PYZhy{}}\PY{l+s+s1}{\PYZbs{}}\PY{l+s+s1}{d}\PY{l+s+si}{\PYZob{}4\PYZcb{}}\PY{l+s+s1}{)}\PY{l+s+s1}{\PYZsq{}}\PY{p}{)}
+        \PY{n}{phone\PYZus{}num} \PY{o}{=} \PY{n}{phone\PYZus{}num\PYZus{}regex}\PY{o}{.}\PY{n}{search}\PY{p}{(}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{My number is 415\PYZhy{}555\PYZhy{}4242.}\PY{l+s+s1}{\PYZsq{}}\PY{p}{)}
+        \PY{n+nb}{print}\PY{p}{(}\PY{n}{phone\PYZus{}num}\PY{o}{.}\PY{n}{group}\PY{p}{(}\PY{l+m+mi}{1}\PY{p}{)}\PY{p}{)}
+        \PY{n+nb}{print}\PY{p}{(}\PY{n}{phone\PYZus{}num}\PY{o}{.}\PY{n}{group}\PY{p}{(}\PY{l+m+mi}{2}\PY{p}{)}\PY{p}{)}
+        \PY{c+c1}{\PYZsh{} 如果要一次获取所有的分组，就要使用groups()方法}
+        \PY{n+nb}{print}\PY{p}{(}\PY{n}{phone\PYZus{}num}\PY{o}{.}\PY{n}{group}\PY{p}{(}\PY{p}{)}\PY{p}{)}
+\end{Verbatim}
+
+
+    \begin{Verbatim}[commandchars=\\\{\}]
+415
+555-4242
+415-555-4242
+
+    \end{Verbatim}
+
+    \begin{Verbatim}[commandchars=\\\{\}]
+{\color{incolor}In [{\color{incolor}13}]:} \PY{c+c1}{\PYZsh{} 2.如何匹配括号}
+         \PY{c+c1}{\PYZsh{} 需要用倒斜杠对(和)进行字符转义}
+         
+         \PY{k+kn}{import} \PY{n+nn}{re} 
+         \PY{n}{phone\PYZus{}num\PYZus{}regex} \PY{o}{=} \PY{n}{re}\PY{o}{.}\PY{n}{compile}\PY{p}{(}\PY{l+s+sa}{r}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{(}\PY{l+s+s1}{\PYZbs{}}\PY{l+s+s1}{(}\PY{l+s+s1}{\PYZbs{}}\PY{l+s+s1}{d}\PY{l+s+si}{\PYZob{}3\PYZcb{}}\PY{l+s+s1}{\PYZbs{}}\PY{l+s+s1}{))\PYZhy{}(}\PY{l+s+s1}{\PYZbs{}}\PY{l+s+s1}{d}\PY{l+s+si}{\PYZob{}3\PYZcb{}}\PY{l+s+s1}{\PYZhy{}}\PY{l+s+s1}{\PYZbs{}}\PY{l+s+s1}{d}\PY{l+s+si}{\PYZob{}4\PYZcb{}}\PY{l+s+s1}{)}\PY{l+s+s1}{\PYZsq{}}\PY{p}{)}
+         \PY{n}{phone\PYZus{}num} \PY{o}{=} \PY{n}{phone\PYZus{}num\PYZus{}regex}\PY{o}{.}\PY{n}{search}\PY{p}{(}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{My number is (415)\PYZhy{}555\PYZhy{}4242.}\PY{l+s+s1}{\PYZsq{}}\PY{p}{)}
+         \PY{n+nb}{print}\PY{p}{(}\PY{n}{phone\PYZus{}num}\PY{o}{.}\PY{n}{group}\PY{p}{(}\PY{l+m+mi}{1}\PY{p}{)}\PY{p}{)}
+         \PY{n+nb}{print}\PY{p}{(}\PY{n}{phone\PYZus{}num}\PY{o}{.}\PY{n}{group}\PY{p}{(}\PY{l+m+mi}{2}\PY{p}{)}\PY{p}{)}
+         \PY{n+nb}{print}\PY{p}{(}\PY{n}{phone\PYZus{}num}\PY{o}{.}\PY{n}{group}\PY{p}{(}\PY{p}{)}\PY{p}{)}
+         \PY{c+c1}{\PYZsh{} 传递给 re.compile()的原始字符串中，\PYZbs{}(和\PYZbs{})转义字符将匹配实际的括号字符}
+\end{Verbatim}
+
+
+    \begin{Verbatim}[commandchars=\\\{\}]
+(415)
+555-4242
+(415)-555-4242
+
+    \end{Verbatim}
+
+    \begin{Verbatim}[commandchars=\\\{\}]
+{\color{incolor}In [{\color{incolor}17}]:} \PY{c+c1}{\PYZsh{} 3 \PYZbs{} 用管道匹配多个分组}
+         \PY{c+c1}{\PYZsh{} 字符|称为“管道”。希望匹配许多表达式中的一个时，就可以使用它。例如，}
+         \PY{c+c1}{\PYZsh{} 正则表达式 r\PYZsq{}Batman|Tina Fey\PYZsq{}将匹配\PYZsq{}Batman\PYZsq{}或\PYZsq{}Tina Fey\PYZsq{}。}
+         \PY{c+c1}{\PYZsh{} 如果 Batman 和 Tina Fey 都出现在被查找的字符串中，第一次出现的匹配文本，}
+         \PY{c+c1}{\PYZsh{} 将作为 Match 对象返回}
+         
+         \PY{k+kn}{import} \PY{n+nn}{re}
+         \PY{n}{heroRegex} \PY{o}{=} \PY{n}{re}\PY{o}{.}\PY{n}{compile}\PY{p}{(}\PY{l+s+sa}{r}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{Batman|Tina Fey}\PY{l+s+s1}{\PYZsq{}}\PY{p}{)}
+         \PY{n}{hero1} \PY{o}{=} \PY{n}{heroRegex}\PY{o}{.}\PY{n}{search}\PY{p}{(}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{Batman and Tina Fey.}\PY{l+s+s1}{\PYZsq{}}\PY{p}{)}
+         \PY{n}{hero2} \PY{o}{=} \PY{n}{heroRegex}\PY{o}{.}\PY{n}{search}\PY{p}{(}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{Tina Fey and Batman}\PY{l+s+s1}{\PYZsq{}}\PY{p}{)}
+         \PY{n+nb}{print}\PY{p}{(}\PY{n}{hero1}\PY{o}{.}\PY{n}{group}\PY{p}{(}\PY{p}{)}\PY{p}{)}
+         \PY{n+nb}{print}\PY{p}{(}\PY{n}{hero2}\PY{o}{.}\PY{n}{group}\PY{p}{(}\PY{p}{)}\PY{p}{)}
+\end{Verbatim}
+
+
+    \begin{Verbatim}[commandchars=\\\{\}]
+Batman
+Tina Fey
+
+    \end{Verbatim}
+
+    \begin{Verbatim}[commandchars=\\\{\}]
+{\color{incolor}In [{\color{incolor}18}]:} \PY{c+c1}{\PYZsh{} 假设你希望匹配\PYZsq{}Batman\PYZsq{}、\PYZsq{}Batmobile\PYZsq{}、\PYZsq{}Batcopter\PYZsq{}和\PYZsq{}Batbat\PYZsq{}中任意一个。因为所有这}
+         \PY{c+c1}{\PYZsh{} 些字符串都以 Bat 开始，所以如果能够只指定一次前缀，就很方便。这可以通过括}
+         \PY{c+c1}{\PYZsh{} 号实现}
+         \PY{k+kn}{import} \PY{n+nn}{re}
+         \PY{n}{batRegex} \PY{o}{=} \PY{n}{re}\PY{o}{.}\PY{n}{compile}\PY{p}{(}\PY{l+s+sa}{r}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{Bat(man|mobile|copter|bat)}\PY{l+s+s1}{\PYZsq{}}\PY{p}{)}
+         \PY{n}{mo} \PY{o}{=} \PY{n}{batRegex}\PY{o}{.}\PY{n}{search}\PY{p}{(}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{Batmobile lost a wheel}\PY{l+s+s1}{\PYZsq{}}\PY{p}{)}
+         \PY{n}{mo}\PY{o}{.}\PY{n}{group}\PY{p}{(}\PY{p}{)}
+         \PY{c+c1}{\PYZsh{} 用管道符和括号可以实现几种可选模式的匹配，如果要匹配真正的 \PYZbs{} 就要用到反斜杠}
+\end{Verbatim}
+
+
+\begin{Verbatim}[commandchars=\\\{\}]
+{\color{outcolor}Out[{\color{outcolor}18}]:} 'Batmobile'
+\end{Verbatim}
+            
+    \begin{Verbatim}[commandchars=\\\{\}]
+{\color{incolor}In [{\color{incolor}20}]:} \PY{c+c1}{\PYZsh{} 4 ？用问号实现可选匹配 }
+         \PY{c+c1}{\PYZsh{} 有时候，想匹配的模式是可选的。就是说，不论这段文本在不在，正则表达式}
+         \PY{c+c1}{\PYZsh{} 都会认为匹配。字符?表明它前面的分组在这个模式中是可选的}
+         
+         \PY{k+kn}{import} \PY{n+nn}{re}
+         \PY{n}{batRegex} \PY{o}{=} \PY{n}{re}\PY{o}{.}\PY{n}{compile}\PY{p}{(}\PY{l+s+sa}{r}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{Bat(wo)?man}\PY{l+s+s1}{\PYZsq{}}\PY{p}{)}
+         \PY{n}{mo1} \PY{o}{=} \PY{n}{batRegex}\PY{o}{.}\PY{n}{search}\PY{p}{(}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{The adventures of Batman.}\PY{l+s+s1}{\PYZsq{}}\PY{p}{)}
+         \PY{n+nb}{print}\PY{p}{(}\PY{n}{mo1}\PY{o}{.}\PY{n}{group}\PY{p}{(}\PY{p}{)}\PY{p}{)}
+         \PY{n}{mo2} \PY{o}{=} \PY{n}{batRegex}\PY{o}{.}\PY{n}{search}\PY{p}{(}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{The adventures of Batwoman.}\PY{l+s+s1}{\PYZsq{}}\PY{p}{)}
+         \PY{n+nb}{print}\PY{p}{(}\PY{n}{mo2}\PY{o}{.}\PY{n}{group}\PY{p}{(}\PY{p}{)}\PY{p}{)}
+         
+         \PY{c+c1}{\PYZsh{} 正则表达式中的(wo)?部分表明，模式wo 是可选的分组。该正则表达式匹配的文本}
+         \PY{c+c1}{\PYZsh{} 中，wo将出现零次或一次。这就是为什么正则表达式既匹配\PYZsq{}Batwoman\PYZsq{}，又匹配\PYZsq{}Batman\PYZsq{}。}
+\end{Verbatim}
+
+
+    \begin{Verbatim}[commandchars=\\\{\}]
+Batman
+Batwoman
+
+    \end{Verbatim}
+
+    \begin{Verbatim}[commandchars=\\\{\}]
+{\color{incolor}In [{\color{incolor}24}]:} \PY{c+c1}{\PYZsh{} 匹配包含区号和不包含区号的电话号码}
+         
+         \PY{k+kn}{import} \PY{n+nn}{re}
+         \PY{k+kn}{import} \PY{n+nn}{re} 
+         \PY{n}{phone\PYZus{}num\PYZus{}regex} \PY{o}{=} \PY{n}{re}\PY{o}{.}\PY{n}{compile}\PY{p}{(}\PY{l+s+sa}{r}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{(}\PY{l+s+s1}{\PYZbs{}}\PY{l+s+s1}{d}\PY{l+s+si}{\PYZob{}3\PYZcb{}}\PY{l+s+s1}{\PYZhy{})?(}\PY{l+s+s1}{\PYZbs{}}\PY{l+s+s1}{d}\PY{l+s+si}{\PYZob{}3\PYZcb{}}\PY{l+s+s1}{\PYZhy{}}\PY{l+s+s1}{\PYZbs{}}\PY{l+s+s1}{d}\PY{l+s+si}{\PYZob{}4\PYZcb{}}\PY{l+s+s1}{)}\PY{l+s+s1}{\PYZsq{}}\PY{p}{)}
+         \PY{n}{phone\PYZus{}num1} \PY{o}{=} \PY{n}{phone\PYZus{}num\PYZus{}regex}\PY{o}{.}\PY{n}{search}\PY{p}{(}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{My number is 415\PYZhy{}555\PYZhy{}4242.}\PY{l+s+s1}{\PYZsq{}}\PY{p}{)}
+         \PY{n+nb}{print}\PY{p}{(}\PY{n}{phone\PYZus{}num1}\PY{o}{.}\PY{n}{group}\PY{p}{(}\PY{p}{)}\PY{p}{)}
+         \PY{n}{phone\PYZus{}num2} \PY{o}{=} \PY{n}{phone\PYZus{}num\PYZus{}regex}\PY{o}{.}\PY{n}{search}\PY{p}{(}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{His num is 976\PYZhy{}2324}\PY{l+s+s1}{\PYZsq{}}\PY{p}{)}
+         \PY{n+nb}{print}\PY{p}{(}\PY{n}{phone\PYZus{}num2}\PY{o}{.}\PY{n}{group}\PY{p}{(}\PY{p}{)}\PY{p}{)}
+\end{Verbatim}
+
+
+    \begin{Verbatim}[commandchars=\\\{\}]
+415-555-4242
+976-2324
+
+    \end{Verbatim}
+
+    \begin{Verbatim}[commandchars=\\\{\}]
+{\color{incolor}In [{\color{incolor}25}]:} \PY{c+c1}{\PYZsh{} 5. 用星号匹配零次或多次}
+         \PY{c+c1}{\PYZsh{} *（称为星号）意味着“匹配零次或多次”，即星号之前的分组，可以在文本中出}
+         \PY{c+c1}{\PYZsh{} 本文档由Linux公社 www.linuxidc.com 整理}
+         \PY{c+c1}{\PYZsh{} Python 编程快速上手——让繁琐工作自动化}
+         \PY{c+c1}{\PYZsh{} 现任意次。它可以完全不存在，或一次又一次地重复}
+         
+         \PY{k+kn}{import} \PY{n+nn}{re}
+         \PY{n}{batRegex} \PY{o}{=} \PY{n}{re}\PY{o}{.}\PY{n}{compile}\PY{p}{(}\PY{l+s+sa}{r}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{Bat(wo)*man}\PY{l+s+s1}{\PYZsq{}}\PY{p}{)}
+         \PY{n}{mo} \PY{o}{=} \PY{n}{batRegex}\PY{o}{.}\PY{n}{search}\PY{p}{(}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{The Advantures of Batman}\PY{l+s+s1}{\PYZsq{}}\PY{p}{)}
+         \PY{n}{mo}\PY{o}{.}\PY{n}{group}\PY{p}{(}\PY{p}{)}
+         \PY{c+c1}{\PYZsh{} 不出现}
+\end{Verbatim}
+
+
+\begin{Verbatim}[commandchars=\\\{\}]
+{\color{outcolor}Out[{\color{outcolor}25}]:} 'Batman'
+\end{Verbatim}
+            
+    \begin{Verbatim}[commandchars=\\\{\}]
+{\color{incolor}In [{\color{incolor}27}]:} \PY{n}{batRegex} \PY{o}{=} \PY{n}{re}\PY{o}{.}\PY{n}{compile}\PY{p}{(}\PY{l+s+sa}{r}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{Bat(wo)*man}\PY{l+s+s1}{\PYZsq{}}\PY{p}{)}
+         \PY{n}{mo} \PY{o}{=} \PY{n}{batRegex}\PY{o}{.}\PY{n}{search}\PY{p}{(}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{The Advantures of Batwoman}\PY{l+s+s1}{\PYZsq{}}\PY{p}{)}
+         \PY{n}{mo}\PY{o}{.}\PY{n}{group}\PY{p}{(}\PY{p}{)}
+         \PY{c+c1}{\PYZsh{} 出现一次}
+\end{Verbatim}
+
+
+\begin{Verbatim}[commandchars=\\\{\}]
+{\color{outcolor}Out[{\color{outcolor}27}]:} 'Batwowoman'
+\end{Verbatim}
+            
+    \begin{Verbatim}[commandchars=\\\{\}]
+{\color{incolor}In [{\color{incolor}28}]:} \PY{n}{batRegex} \PY{o}{=} \PY{n}{re}\PY{o}{.}\PY{n}{compile}\PY{p}{(}\PY{l+s+sa}{r}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{Bat(wo)*man}\PY{l+s+s1}{\PYZsq{}}\PY{p}{)}
+         \PY{n}{mo} \PY{o}{=} \PY{n}{batRegex}\PY{o}{.}\PY{n}{search}\PY{p}{(}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{The Advantures of Batwowowoman}\PY{l+s+s1}{\PYZsq{}}\PY{p}{)}
+         \PY{n}{mo}\PY{o}{.}\PY{n}{group}\PY{p}{(}\PY{p}{)}
+         \PY{c+c1}{\PYZsh{} 出现多次}
+\end{Verbatim}
+
+
+\begin{Verbatim}[commandchars=\\\{\}]
+{\color{outcolor}Out[{\color{outcolor}28}]:} 'Batwowowoman'
+\end{Verbatim}
+            
+    \begin{Verbatim}[commandchars=\\\{\}]
+{\color{incolor}In [{\color{incolor}29}]:} \PY{c+c1}{\PYZsh{}如果需要匹配真正的星号字符，就在正则表达式的星号字符前加上倒斜杠，即\PYZbs{}*。}
+         \PY{k+kn}{import} \PY{n+nn}{re}
+         \PY{n}{batRegex} \PY{o}{=} \PY{n}{re}\PY{o}{.}\PY{n}{compile}\PY{p}{(}\PY{l+s+sa}{r}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{Bat}\PY{l+s+s1}{\PYZbs{}}\PY{l+s+s1}{*(wo)*man}\PY{l+s+s1}{\PYZsq{}}\PY{p}{)}
+         \PY{n}{mo} \PY{o}{=} \PY{n}{batRegex}\PY{o}{.}\PY{n}{search}\PY{p}{(}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{The Advantures of Bat*wowowoman}\PY{l+s+s1}{\PYZsq{}}\PY{p}{)}
+         \PY{n}{mo}\PY{o}{.}\PY{n}{group}\PY{p}{(}\PY{p}{)}
+\end{Verbatim}
+
+
+\begin{Verbatim}[commandchars=\\\{\}]
+{\color{outcolor}Out[{\color{outcolor}29}]:} 'Bat*wowowoman'
+\end{Verbatim}
+            
+    \begin{Verbatim}[commandchars=\\\{\}]
+{\color{incolor}In [{\color{incolor}31}]:} \PY{c+c1}{\PYZsh{} 6.用加号匹配一次或多次}
+         \PY{c+c1}{\PYZsh{} *意味着“匹配零次或多次”，+（加号）则意味着“匹配一次或多次”。星号不要求}
+         \PY{c+c1}{\PYZsh{} 分组出现在匹配的字符串中，但加号不同，加号前面的分组必须“至少出现一次”。这不}
+         \PY{c+c1}{\PYZsh{} 是可选的}
+         \PY{k+kn}{import} \PY{n+nn}{re}
+         \PY{n}{batRegex} \PY{o}{=} \PY{n}{re}\PY{o}{.}\PY{n}{compile}\PY{p}{(}\PY{l+s+sa}{r}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{Bat(wo)+man}\PY{l+s+s1}{\PYZsq{}}\PY{p}{)}
+         \PY{n}{mo} \PY{o}{=} \PY{n}{batRegex}\PY{o}{.}\PY{n}{search}\PY{p}{(}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{The Advantures of Batwoman}\PY{l+s+s1}{\PYZsq{}}\PY{p}{)}
+         \PY{n}{mo}\PY{o}{.}\PY{n}{group}\PY{p}{(}\PY{p}{)}
+         \PY{c+c1}{\PYZsh{} 匹配出现一次}
+\end{Verbatim}
+
+
+\begin{Verbatim}[commandchars=\\\{\}]
+{\color{outcolor}Out[{\color{outcolor}31}]:} 'Batwoman'
+\end{Verbatim}
+            
+    \begin{Verbatim}[commandchars=\\\{\}]
+{\color{incolor}In [{\color{incolor}33}]:} \PY{n}{batRegex} \PY{o}{=} \PY{n}{re}\PY{o}{.}\PY{n}{compile}\PY{p}{(}\PY{l+s+sa}{r}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{Bat(wo)+man}\PY{l+s+s1}{\PYZsq{}}\PY{p}{)}
+         \PY{n}{mo} \PY{o}{=} \PY{n}{batRegex}\PY{o}{.}\PY{n}{search}\PY{p}{(}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{The Advantures of Batwowoman}\PY{l+s+s1}{\PYZsq{}}\PY{p}{)}
+         \PY{n}{mo}\PY{o}{.}\PY{n}{group}\PY{p}{(}\PY{p}{)}
+         \PY{c+c1}{\PYZsh{} 匹配出现多次}
+\end{Verbatim}
+
+
+\begin{Verbatim}[commandchars=\\\{\}]
+{\color{outcolor}Out[{\color{outcolor}33}]:} 'Batwowoman'
+\end{Verbatim}
+            
+    \begin{Verbatim}[commandchars=\\\{\}]
+{\color{incolor}In [{\color{incolor}35}]:} \PY{n}{batRegex} \PY{o}{=} \PY{n}{re}\PY{o}{.}\PY{n}{compile}\PY{p}{(}\PY{l+s+sa}{r}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{Bat(wo)+man}\PY{l+s+s1}{\PYZsq{}}\PY{p}{)}
+         \PY{n}{mo} \PY{o}{=} \PY{n}{batRegex}\PY{o}{.}\PY{n}{search}\PY{p}{(}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{The Advantures of Batman}\PY{l+s+s1}{\PYZsq{}}\PY{p}{)}
+         \PY{n}{mo} \PY{o}{==} \PY{k+kc}{None}
+         \PY{c+c1}{\PYZsh{} 没有匹配到}
+\end{Verbatim}
+
+
+\begin{Verbatim}[commandchars=\\\{\}]
+{\color{outcolor}Out[{\color{outcolor}35}]:} True
+\end{Verbatim}
+            
+    \begin{Verbatim}[commandchars=\\\{\}]
+{\color{incolor}In [{\color{incolor}36}]:} \PY{c+c1}{\PYZsh{} 7 用花括号匹配特定次数}
+         \PY{c+c1}{\PYZsh{} 如果想要一个分组重复特定次数，就在正则表达式中该分组的后面，跟上花括}
+         \PY{c+c1}{\PYZsh{} 号包围的数字。例如，正则表达式(Ha)\PYZob{}3\PYZcb{}将匹配字符串\PYZsq{}HaHaHa\PYZsq{}，但不会匹配\PYZsq{}HaHa\PYZsq{}，}
+         \PY{c+c1}{\PYZsh{} 因为后者只重复了(Ha)分组两次。}
+         \PY{c+c1}{\PYZsh{} 除了一个数字，还可以指定一个范围，即在花括号中写下一个最小值、一个逗号和}
+         \PY{c+c1}{\PYZsh{} 一个最大值。例如，正则表达式(Ha)\PYZob{}3,5\PYZcb{}将匹配\PYZsq{}HaHaHa\PYZsq{}、\PYZsq{}HaHaHaHa\PYZsq{}和\PYZsq{}HaHaHaHaHa\PYZsq{}。}
+         \PY{c+c1}{\PYZsh{} 也可以不写花括号中的第一个或第二个数字，不限定最小值或最大值。例如，}
+         \PY{c+c1}{\PYZsh{} 本文档由Linux公社 www.linuxidc.com 整理}
+         \PY{c+c1}{\PYZsh{} 第 7 章 模式匹配与正则表达式 }
+         \PY{c+c1}{\PYZsh{} (Ha)\PYZob{}3,\PYZcb{}将匹配 3 次或更多次实例，(Ha)\PYZob{},5\PYZcb{}将匹配 0 到 5 次实例。花括号让正则表}
+         \PY{c+c1}{\PYZsh{} 达式更简短}
+         \PY{k+kn}{import} \PY{n+nn}{re}
+         \PY{n}{batRegex} \PY{o}{=} \PY{n}{re}\PY{o}{.}\PY{n}{compile}\PY{p}{(}\PY{l+s+sa}{r}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{(ha)}\PY{l+s+si}{\PYZob{}3\PYZcb{}}\PY{l+s+s1}{\PYZsq{}}\PY{p}{)}
+         \PY{n}{mo1} \PY{o}{=} \PY{n}{batRegex}\PY{o}{.}\PY{n}{search}\PY{p}{(}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{khafjhahahakha}\PY{l+s+s1}{\PYZsq{}}\PY{p}{)}
+         \PY{n}{mo1}\PY{o}{.}\PY{n}{group}\PY{p}{(}\PY{p}{)}
+\end{Verbatim}
+
+
+\begin{Verbatim}[commandchars=\\\{\}]
+{\color{outcolor}Out[{\color{outcolor}36}]:} 'hahaha'
+\end{Verbatim}
+            
+    \begin{Verbatim}[commandchars=\\\{\}]
+{\color{incolor}In [{\color{incolor}37}]:} \PY{k+kn}{import} \PY{n+nn}{re}
+         \PY{n}{batRegex} \PY{o}{=} \PY{n}{re}\PY{o}{.}\PY{n}{compile}\PY{p}{(}\PY{l+s+sa}{r}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{(ha)}\PY{l+s+si}{\PYZob{}3\PYZcb{}}\PY{l+s+s1}{\PYZsq{}}\PY{p}{)}
+         \PY{n}{mo2} \PY{o}{=} \PY{n}{batRegex}\PY{o}{.}\PY{n}{search}\PY{p}{(}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{khakha}\PY{l+s+s1}{\PYZsq{}}\PY{p}{)}
+         \PY{n}{mo2} \PY{o}{==} \PY{k+kc}{None}
+\end{Verbatim}
+
+
+\begin{Verbatim}[commandchars=\\\{\}]
+{\color{outcolor}Out[{\color{outcolor}37}]:} True
+\end{Verbatim}
+            
+    \subsection{贪婪和非贪婪匹配}\label{ux8d2aux5a6aux548cux975eux8d2aux5a6aux5339ux914d}
+
+\begin{itemize}
+\item
+  贪婪：在整个表达式匹配成功的前提下，尽可能多的匹配
+\item
+  非贪婪：在整个表达式匹配成功的前提下，尽可能少的匹配，遇到结束的标
+  签则结束，在花括号后面加个 ?
+
+  在字符串'HaHaHaHaHa'中，因为(Ha)\{3,5\}可以匹配3 个、4 个或5
+  个实例，你可能会想，为什么在前面花括号的例子中，Match
+  对象的group()调用会返回'HaHaHaHaHa'，而不是更短的可能结果。'HaHaHa'和'HaHaHaHa'也能够有效地匹配正则表达式(Ha)\{3,5\}。
+  Python
+  的正则表达式默认是``贪心''的，这表示在有二义的情况下，它们会尽可能匹配最长的字符串。
+
+  花括号的``非贪心''版本匹配尽可能最短的字符串，即在结束的花括号后跟着一个问号。
+\item
+  .* 匹配任意字符无限次
+\end{itemize}
+
+    \begin{Verbatim}[commandchars=\\\{\}]
+{\color{incolor}In [{\color{incolor}38}]:} \PY{c+c1}{\PYZsh{} 贪心匹配}
+         \PY{k+kn}{import} \PY{n+nn}{re}
+         \PY{n}{greedyHaRegex} \PY{o}{=} \PY{n}{re}\PY{o}{.}\PY{n}{compile}\PY{p}{(}\PY{l+s+sa}{r}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{(Ha)}\PY{l+s+s1}{\PYZob{}}\PY{l+s+s1}{3,5\PYZcb{}}\PY{l+s+s1}{\PYZsq{}}\PY{p}{)}
+         \PY{n}{mo1} \PY{o}{=} \PY{n}{greedyHaRegex}\PY{o}{.}\PY{n}{search}\PY{p}{(}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{HaHaHaHaHa}\PY{l+s+s1}{\PYZsq{}}\PY{p}{)}
+         \PY{n}{mo1}\PY{o}{.}\PY{n}{group}\PY{p}{(}\PY{p}{)}
+\end{Verbatim}
+
+
+\begin{Verbatim}[commandchars=\\\{\}]
+{\color{outcolor}Out[{\color{outcolor}38}]:} 'HaHaHaHaHa'
+\end{Verbatim}
+            
+    \begin{Verbatim}[commandchars=\\\{\}]
+{\color{incolor}In [{\color{incolor}42}]:} \PY{c+c1}{\PYZsh{} 非贪心匹配}
+         \PY{n}{geedyHaRegey} \PY{o}{=} \PY{n}{re}\PY{o}{.}\PY{n}{compile}\PY{p}{(}\PY{l+s+sa}{r}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{(Ha)}\PY{l+s+s1}{\PYZob{}}\PY{l+s+s1}{3,5\PYZcb{}?}\PY{l+s+s1}{\PYZsq{}}\PY{p}{)}
+         \PY{n}{mo2} \PY{o}{=} \PY{n}{geedyHaRegey}\PY{o}{.}\PY{n}{search}\PY{p}{(}\PY{l+s+s2}{\PYZdq{}}\PY{l+s+s2}{HaHaHaHaHa}\PY{l+s+s2}{\PYZdq{}}\PY{p}{)}
+         \PY{n}{mo2}\PY{o}{.}\PY{n}{group}\PY{p}{(}\PY{p}{)}
+         \PY{c+c1}{\PYZsh{} 请注意，问号在正则表达式中可能有两种含义：声明非贪心匹配或表示可选的}
+         \PY{c+c1}{\PYZsh{} 分组。这两种含义是完全无关的}
+\end{Verbatim}
+
+
+\begin{Verbatim}[commandchars=\\\{\}]
+{\color{outcolor}Out[{\color{outcolor}42}]:} 'HaHaHa'
+\end{Verbatim}
+            
+    \begin{Verbatim}[commandchars=\\\{\}]
+{\color{incolor}In [{\color{incolor}83}]:} \PY{c+c1}{\PYZsh{} 贪婪模式 和 非贪婪模式}
+         \PY{k+kn}{import} \PY{n+nn}{re}
+         \PY{n}{str1} \PY{o}{=} \PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{aaa\PYZlt{}p\PYZgt{}hello\PYZlt{}/p\PYZgt{}bbb\PYZlt{}p\PYZgt{}world\PYZlt{}/p\PYZgt{}ccc}\PY{l+s+s1}{\PYZsq{}}
+         \PY{n}{pattern1} \PY{o}{=} \PY{n}{re}\PY{o}{.}\PY{n}{compile}\PY{p}{(}\PY{l+s+sa}{r}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{\PYZlt{}p\PYZgt{}.*\PYZlt{}/p\PYZgt{}}\PY{l+s+s1}{\PYZsq{}}\PY{p}{)}  \PY{c+c1}{\PYZsh{} 匹配任意字符无限次}
+         \PY{n}{pattern2} \PY{o}{=} \PY{n}{re}\PY{o}{.}\PY{n}{compile}\PY{p}{(}\PY{l+s+sa}{r}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{\PYZlt{}p\PYZgt{}.*?\PYZlt{}/p\PYZgt{}}\PY{l+s+s1}{\PYZsq{}}\PY{p}{)} \PY{c+c1}{\PYZsh{} 加个问号为非贪婪匹配}
+         \PY{n}{result1} \PY{o}{=} \PY{n}{pattern1}\PY{o}{.}\PY{n}{findall}\PY{p}{(}\PY{n}{str1}\PY{p}{)}\PY{c+c1}{\PYZsh{} 贪婪模式匹配}
+         \PY{n}{result2} \PY{o}{=} \PY{n}{pattern2}\PY{o}{.}\PY{n}{findall}\PY{p}{(}\PY{n}{str1}\PY{p}{)}\PY{c+c1}{\PYZsh{} 婪模式匹配}
+         \PY{n+nb}{print}\PY{p}{(}\PY{n}{result1}\PY{p}{)}
+         \PY{n+nb}{print}\PY{p}{(}\PY{n}{result2}\PY{p}{)}
+\end{Verbatim}
+
+
+    \begin{Verbatim}[commandchars=\\\{\}]
+['<p>hello</p>bbb<p>world</p>']
+['<p>hello</p>', '<p>world</p>']
+
+    \end{Verbatim}
+
+    \subsection{正则表达式}\label{ux6b63ux5219ux8868ux8fbeux5f0f}
+
+\begin{itemize}
+\item
+  compile() 编译正则表达式，返回一个对象模式。
+\item
+  match()
+  字符串的开头进行匹配即字符串索引的{[}0{]}位置匹配成功就返回一个匹配对象，匹配失败就返回None
+\item
+  search() 函数会在字符串内查找模式匹配，只要找到第一个匹配然后返回，
+  如果字符串没有匹配，则返回None
+\item
+  findall() 遍历匹配 可以获取字符串中所有匹配的字符串，返回一个列
+\end{itemize}
+
+    \begin{Verbatim}[commandchars=\\\{\}]
+{\color{incolor}In [{\color{incolor}44}]:} \PY{k+kn}{import} \PY{n+nn}{re}
+         \PY{n}{mo} \PY{o}{=} \PY{n}{re}\PY{o}{.}\PY{n}{match}\PY{p}{(}\PY{l+s+sa}{r}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{he}\PY{l+s+s1}{\PYZsq{}}\PY{p}{,}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{hello world}\PY{l+s+s1}{\PYZsq{}}\PY{p}{)}
+         \PY{n+nb}{print}\PY{p}{(}\PY{n}{mo}\PY{o}{.}\PY{n}{group}\PY{p}{(}\PY{p}{)}\PY{p}{)}
+\end{Verbatim}
+
+
+    \begin{Verbatim}[commandchars=\\\{\}]
+he
+
+    \end{Verbatim}
+
+    \begin{Verbatim}[commandchars=\\\{\}]
+{\color{incolor}In [{\color{incolor}49}]:} \PY{k+kn}{import} \PY{n+nn}{re}
+         \PY{n}{pa} \PY{o}{=} \PY{n}{re}\PY{o}{.}\PY{n}{compile}\PY{p}{(}\PY{l+s+sa}{r}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{[a\PYZhy{}zA\PYZhy{}Z]}\PY{l+s+si}{\PYZob{}1\PYZcb{}}\PY{l+s+s1}{\PYZsq{}}\PY{p}{)} \PY{c+c1}{\PYZsh{} 匹配单个的字母}
+         \PY{n}{strs} \PY{o}{=} \PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{123Aabc456}\PY{l+s+s1}{\PYZsq{}} \PY{c+c1}{\PYZsh{} 会匹配整个字符串，将符合规则的保存在列表中}
+         \PY{n}{mo} \PY{o}{=} \PY{n}{pa}\PY{o}{.}\PY{n}{findall}\PY{p}{(}\PY{n}{strs}\PY{p}{)}
+         \PY{n+nb}{print}\PY{p}{(}\PY{n}{mo}\PY{p}{)}
+         \PY{c+c1}{\PYZsh{}print(re.findall(pa,strs))}
+\end{Verbatim}
+
+
+    \begin{Verbatim}[commandchars=\\\{\}]
+['A', 'a', 'b', 'c']
+
+    \end{Verbatim}
+
+    \begin{Verbatim}[commandchars=\\\{\}]
+{\color{incolor}In [{\color{incolor}50}]:} \PY{c+c1}{\PYZsh{} 匹配任意长度的字符}
+         \PY{k+kn}{import} \PY{n+nn}{re}
+         \PY{n}{pattern} \PY{o}{=} \PY{n}{re}\PY{o}{.}\PY{n}{compile}\PY{p}{(}\PY{l+s+sa}{r}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{[a\PYZhy{}zA\PYZhy{}Z]+}\PY{l+s+s1}{\PYZsq{}}\PY{p}{)} \PY{c+c1}{\PYZsh{} 匹配任意长度的英文字母}
+         \PY{n}{str1} \PY{o}{=} \PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{123fdsdf456fdFd789}\PY{l+s+s1}{\PYZsq{}} \PY{c+c1}{\PYZsh{} 会匹配整个字符串，将符合规则的保存在列表中}
+         \PY{n}{result}\PY{o}{=} \PY{n}{pattern}\PY{o}{.}\PY{n}{findall}\PY{p}{(}\PY{n}{str1}\PY{p}{)}
+         \PY{n+nb}{print}\PY{p}{(}\PY{n}{result}\PY{p}{)} \PY{c+c1}{\PYZsh{} 返回一个符合的列表}
+\end{Verbatim}
+
+
+    \begin{Verbatim}[commandchars=\\\{\}]
+['fdsdf', 'fdFd']
+
+    \end{Verbatim}
+
+    \begin{Verbatim}[commandchars=\\\{\}]
+{\color{incolor}In [{\color{incolor}51}]:} \PY{c+c1}{\PYZsh{} findall 遇上分组的时候只返回分组匹配的结果}
+         \PY{k+kn}{import} \PY{n+nn}{re}
+         \PY{n}{pattern} \PY{o}{=} \PY{n}{re}\PY{o}{.}\PY{n}{compile}\PY{p}{(}\PY{l+s+sa}{r}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{([a\PYZhy{}z])[a\PYZhy{}z]([a\PYZhy{}z])}\PY{l+s+s1}{\PYZsq{}}\PY{p}{)} \PY{c+c1}{\PYZsh{} 匹配任意长度的英文字母}
+         \PY{n}{str1} \PY{o}{=} \PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{123fabd456dfd789}\PY{l+s+s1}{\PYZsq{}} \PY{c+c1}{\PYZsh{} 会匹配整个字符串，将符合规则的保存在列表中}
+         \PY{n}{result}\PY{o}{=} \PY{n}{pattern}\PY{o}{.}\PY{n}{findall}\PY{p}{(}\PY{n}{str1}\PY{p}{)}
+         \PY{n+nb}{print}\PY{p}{(}\PY{n}{result}\PY{p}{)} \PY{c+c1}{\PYZsh{} 返回一个符合的列表}
+\end{Verbatim}
+
+
+    \begin{Verbatim}[commandchars=\\\{\}]
+[('f', 'b'), ('d', 'd')]
+
+    \end{Verbatim}
+
+    \begin{Verbatim}[commandchars=\\\{\}]
+{\color{incolor}In [{\color{incolor}58}]:} \PY{c+c1}{\PYZsh{} finditer 可以返回完整的匹配结果是一个迭代器可以用for循环遍历，以及分组的匹配结果}
+         \PY{k+kn}{import} \PY{n+nn}{re}
+         \PY{n}{pattern} \PY{o}{=} \PY{n}{re}\PY{o}{.}\PY{n}{compile}\PY{p}{(}\PY{l+s+sa}{r}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{([a\PYZhy{}z])[a\PYZhy{}z]([a\PYZhy{}z])}\PY{l+s+s1}{\PYZsq{}}\PY{p}{)} \PY{c+c1}{\PYZsh{} 匹配任意长度的英文字母}
+         \PY{n}{str1} \PY{o}{=} \PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{123fabd456dfd789}\PY{l+s+s1}{\PYZsq{}} \PY{c+c1}{\PYZsh{} 会匹配整个字符串，将符合规则的保存在列表中}
+         \PY{n}{result}\PY{o}{=} \PY{n}{pattern}\PY{o}{.}\PY{n}{finditer}\PY{p}{(}\PY{n}{str1}\PY{p}{)}
+         \PY{k}{for} \PY{n}{i} \PY{o+ow}{in} \PY{n}{result}\PY{p}{:}
+             \PY{n+nb}{print}\PY{p}{(}\PY{n}{i}\PY{o}{.}\PY{n}{group}\PY{p}{(}\PY{l+m+mi}{1}\PY{p}{)}\PY{p}{)}\PY{c+c1}{\PYZsh{} 返回一个符合的列表,使用group返回完整的匹配结果}
+             \PY{n+nb}{print}\PY{p}{(}\PY{n}{i}\PY{o}{.}\PY{n}{group}\PY{p}{(}\PY{l+m+mi}{2}\PY{p}{)}\PY{p}{)} \PY{c+c1}{\PYZsh{} 返回第一个分组的匹配结果}
+\end{Verbatim}
+
+
+    \begin{Verbatim}[commandchars=\\\{\}]
+f
+b
+d
+d
+
+    \end{Verbatim}
+
+    \begin{Verbatim}[commandchars=\\\{\}]
+{\color{incolor}In [{\color{incolor}67}]:} \PY{c+c1}{\PYZsh{} split 分割字符串的匹配结果}
+         \PY{c+c1}{\PYZsh{} \PYZbs{}w 字母数字下划线}
+         \PY{k+kn}{import} \PY{n+nn}{re}
+         \PY{n}{str1} \PY{o}{=} \PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{one,two,three,four}\PY{l+s+s1}{\PYZsq{}}
+         \PY{n}{str2} \PY{o}{=} \PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{one1two2three3four}\PY{l+s+s1}{\PYZsq{}}
+         \PY{n}{str1\PYZus{}list} \PY{o}{=} \PY{n}{str1}\PY{o}{.}\PY{n}{split}\PY{p}{(}\PY{l+s+s2}{\PYZdq{}}\PY{l+s+s2}{,}\PY{l+s+s2}{\PYZdq{}}\PY{p}{)}
+         \PY{n+nb}{print}\PY{p}{(}\PY{n}{str1\PYZus{}list}\PY{p}{)}
+         \PY{n}{str\PYZus{}split1} \PY{o}{=} \PY{n}{re}\PY{o}{.}\PY{n}{split}\PY{p}{(}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{\PYZbs{}}\PY{l+s+s1}{W+}\PY{l+s+s1}{\PYZsq{}}\PY{p}{,}\PY{n}{str1}\PY{p}{)}
+         \PY{n}{str\PYZus{}split2} \PY{o}{=} \PY{n}{re}\PY{o}{.}\PY{n}{split}\PY{p}{(}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{\PYZbs{}}\PY{l+s+s1}{d+}\PY{l+s+s1}{\PYZsq{}}\PY{p}{,}\PY{n}{str2}\PY{p}{)}
+         \PY{n+nb}{print}\PY{p}{(}\PY{n}{str\PYZus{}split1}\PY{p}{)}
+         \PY{n+nb}{print}\PY{p}{(}\PY{n}{str\PYZus{}split2}\PY{p}{)}
+\end{Verbatim}
+
+
+    \begin{Verbatim}[commandchars=\\\{\}]
+['one', 'two', 'three', 'four']
+['one', 'two', 'three', 'four']
+['one', 'two', 'three', 'four']
+
+    \end{Verbatim}
+
+    \begin{Verbatim}[commandchars=\\\{\}]
+{\color{incolor}In [{\color{incolor}72}]:} \PY{c+c1}{\PYZsh{} sub() 使用re替换string中每一个匹配的子串后返回替换后的字符串}
+         \PY{k+kn}{import} \PY{n+nn}{re} 
+         \PY{n}{subRegex} \PY{o}{=} \PY{n}{re}\PY{o}{.}\PY{n}{compile}\PY{p}{(}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{\PYZbs{}}\PY{l+s+s1}{d+}\PY{l+s+s1}{\PYZsq{}}\PY{p}{)}
+         \PY{n}{str1} \PY{o}{=} \PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{ja45dashg468dagagashghhfour5five9}\PY{l+s+s1}{\PYZsq{}}
+         \PY{n}{mo2} \PY{o}{=} \PY{n}{subRegex}\PY{o}{.}\PY{n}{sub}\PY{p}{(}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{\PYZhy{}}\PY{l+s+s1}{\PYZsq{}}\PY{p}{,}\PY{n}{str1}\PY{p}{)}
+         \PY{n+nb}{print}\PY{p}{(}\PY{n}{mo2}\PY{p}{)}
+\end{Verbatim}
+
+
+    \begin{Verbatim}[commandchars=\\\{\}]
+ja-dashg-dagagashghhfour-five-
+
+    \end{Verbatim}
+
+    \begin{Verbatim}[commandchars=\\\{\}]
+{\color{incolor}In [{\color{incolor}71}]:} \PY{c+c1}{\PYZsh{} subn() 返回替换次数}
+         \PY{k+kn}{import} \PY{n+nn}{re} 
+         \PY{n}{subRegex} \PY{o}{=} \PY{n}{re}\PY{o}{.}\PY{n}{compile}\PY{p}{(}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{\PYZbs{}}\PY{l+s+s1}{d+}\PY{l+s+s1}{\PYZsq{}}\PY{p}{)}
+         \PY{n}{str1} \PY{o}{=} \PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{ja45dashg468dagagashghhfour5five9}\PY{l+s+s1}{\PYZsq{}}
+         \PY{n}{mo1} \PY{o}{=} \PY{n}{subRegex}\PY{o}{.}\PY{n}{subn}\PY{p}{(}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{\PYZhy{}}\PY{l+s+s1}{\PYZsq{}}\PY{p}{,}\PY{n}{str1}\PY{p}{)}
+         \PY{n+nb}{print}\PY{p}{(}\PY{n}{mo1}\PY{p}{)}
+\end{Verbatim}
+
+
+    \begin{Verbatim}[commandchars=\\\{\}]
+('ja-dashg-dagagashghhfour-five-', 4)
+
+    \end{Verbatim}
+
+    \begin{Verbatim}[commandchars=\\\{\}]
+{\color{incolor}In [{\color{incolor}73}]:} \PY{c+c1}{\PYZsh{}  引用分组}
+         \PY{k+kn}{import} \PY{n+nn}{re}
+         \PY{n}{strs} \PY{o}{=} \PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{hello 123,world 321}\PY{l+s+s1}{\PYZsq{}}
+         \PY{n}{pattern} \PY{o}{=} \PY{n}{re}\PY{o}{.}\PY{n}{compile}\PY{p}{(}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{\PYZbs{}}\PY{l+s+s1}{w+ }\PY{l+s+s1}{\PYZbs{}}\PY{l+s+s1}{d+}\PY{l+s+s1}{\PYZsq{}}\PY{p}{)}
+         \PY{k}{for} \PY{n}{i} \PY{o+ow}{in} \PY{n}{pattern}\PY{o}{.}\PY{n}{finditer}\PY{p}{(}\PY{n}{strs}\PY{p}{)}\PY{p}{:}
+             \PY{n+nb}{print}\PY{p}{(}\PY{n}{i}\PY{o}{.}\PY{n}{group}\PY{p}{(}\PY{p}{)}\PY{p}{)}
+\end{Verbatim}
+
+
+    \begin{Verbatim}[commandchars=\\\{\}]
+hello 123
+world 321
+
+    \end{Verbatim}
+
+    \subsection{打印分组}\label{ux6253ux5370ux5206ux7ec4}
+
+\begin{verbatim}
+import re
+strs = 'hello 123,world 321'
+pattern = re.compile('(\w+) (\d+)')
+for i in pattern.finditer(strs):
+    print(i.group())
+    print(i.group(1))
+    print(i.group(2))
+\end{verbatim}
+
+    \begin{Verbatim}[commandchars=\\\{\}]
+{\color{incolor}In [{\color{incolor}77}]:} \PY{c+c1}{\PYZsh{}  替换分组}
+         \PY{k+kn}{import} \PY{n+nn}{re}
+         \PY{n}{strs} \PY{o}{=} \PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{hello 123,world 321}\PY{l+s+s1}{\PYZsq{}}
+         \PY{n}{pattern} \PY{o}{=} \PY{n}{re}\PY{o}{.}\PY{n}{compile}\PY{p}{(}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{(}\PY{l+s+s1}{\PYZbs{}}\PY{l+s+s1}{w+) (}\PY{l+s+s1}{\PYZbs{}}\PY{l+s+s1}{d+)}\PY{l+s+s1}{\PYZsq{}}\PY{p}{)}
+         \PY{n+nb}{print}\PY{p}{(}\PY{n}{pattern}\PY{o}{.}\PY{n}{sub}\PY{p}{(}\PY{l+s+sa}{r}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{\PYZbs{}}\PY{l+s+s1}{2 }\PY{l+s+s1}{\PYZbs{}}\PY{l+s+s1}{1}\PY{l+s+s1}{\PYZsq{}}\PY{p}{,}\PY{n}{strs}\PY{p}{)}\PY{p}{)} \PY{c+c1}{\PYZsh{} 取得分组 \PYZbs{}1 \PYZbs{}2}
+         \PY{n+nb}{print}\PY{p}{(}\PY{n}{pattern}\PY{o}{.}\PY{n}{sub}\PY{p}{(}\PY{l+s+sa}{r}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{\PYZbs{}}\PY{l+s+s1}{2***}\PY{l+s+s1}{\PYZbs{}}\PY{l+s+s1}{1}\PY{l+s+s1}{\PYZsq{}}\PY{p}{,}\PY{n}{strs}\PY{p}{)}\PY{p}{)}
+\end{Verbatim}
+
+
+    \begin{Verbatim}[commandchars=\\\{\}]
+123 hello,321 world
+123***hello,321***world
+
+    \end{Verbatim}
+
+    \subsubsection{匹配中文字符}\label{ux5339ux914dux4e2dux6587ux5b57ux7b26}
+
+\begin{itemize}
+\tightlist
+\item
+  pattern = re.compile(r'{[}\u4e00-\u9fa5{]}+') 匹配中文字符
+\end{itemize}
+
+    \begin{Verbatim}[commandchars=\\\{\}]
+{\color{incolor}In [{\color{incolor}86}]:} \PY{c+c1}{\PYZsh{} 匹配中文字符}
+         \PY{k+kn}{import} \PY{n+nn}{re}
+         \PY{n}{str1} \PY{o}{=} \PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{你好,hello,美女!}\PY{l+s+s1}{\PYZsq{}}
+         \PY{n}{pattern} \PY{o}{=} \PY{n}{re}\PY{o}{.}\PY{n}{compile}\PY{p}{(}\PY{l+s+sa}{r}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{[}\PY{l+s+s1}{\PYZbs{}}\PY{l+s+s1}{u4e00\PYZhy{}}\PY{l+s+s1}{\PYZbs{}}\PY{l+s+s1}{u9fa5]+}\PY{l+s+s1}{\PYZsq{}}\PY{p}{)}
+         \PY{n}{result} \PY{o}{=} \PY{n}{pattern}\PY{o}{.}\PY{n}{findall}\PY{p}{(}\PY{n}{str1}\PY{p}{)}
+         \PY{n+nb}{print}\PY{p}{(}\PY{n}{result}\PY{p}{)}
+\end{Verbatim}
+
+
+    \begin{Verbatim}[commandchars=\\\{\}]
+['你好', '美女']
+
+    \end{Verbatim}
+
+
+    % Add a bibliography block to the postdoc
+    
+    
+    
+    \end{document}

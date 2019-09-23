@@ -1,0 +1,52 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Date对象</title>
+	
+	<script>
+		
+//		
+//		// 时间对象Date();
+//		var dt = new Date();
+//		//当前的时间---服务器时间
+//		console.log(dt);
+		// 传入的时间
+//		var dt=new Date('2017-08-12')
+//		console.log(dt)
+		
+//		var dt = Date.now()
+//		console.log(dt) // 毫秒
+		
+		var dt= new Date();
+		// 获取年份
+		console.log(dt.getFullYear());
+		// 获取月份
+		console.log(dt.getMonth()+1);//是0开始的,真实的月份是需要加1的
+		// 获取日期
+		console.log(dt.getDate());
+		// 获取小时
+		console.log(dt.getHours());
+		// 获取分钟
+		console.log(dt.getMinutes());
+		// 获取秒
+		console.log(dt.getSeconds());
+		// 获取星期
+		console.log(dt.getDay());
+		
+		
+		var dt=new Date();
+		console.log(dt.toDateString()) // 英文的日期
+		console.log(dt.toTimeString()) // 小时 分钟 秒
+		console.log(dt.toLocaleDateString()) //数字格式的日期
+		console.log(dt.toLocaleTimeString()) 
+		console.log(dt.valueOf()); //毫秒值
+		console.log(dt);
+//		
+		
+</script>
+</head>
+
+<body>
+</body>
+</html>

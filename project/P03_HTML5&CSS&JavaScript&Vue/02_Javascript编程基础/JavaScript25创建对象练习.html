@@ -1,0 +1,75 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>无标题文档</title>
+	
+	<script>
+		
+		//创建一个电脑对象，有颜色，有重量，有品牌，有型号，可以看电影，可以听音乐，可以打游戏，可以敲代码
+		
+		// 调用Object对象创建对象
+		var computer1 = new Object();
+		computer1.color = "红色";
+		computer1.weight = 2;
+		computer1.brand = "lenovo";
+		computer1.type = "E565";
+		computer1.see_moving = function (){
+			console.log("哈哈，有新电脑看电影喽");
+		};
+		computer1.play_game = function(){
+			console.log("终于周末可以打游戏了");
+		};
+		computer1.coding = function(){
+			console.log("又是一天敲代码的时间");
+		};
+	
+		console.log(computer1.color);
+		computer1.play_game();
+		
+		
+		// 自定义构造函数创建对象
+		
+		function Computer(color,type){
+			this.name=name;
+			this.type=type;
+			this.brand = "lenovo";
+			this.weight = 2;
+			this.see_moving = function (){
+				console.log("终于可以看会小电影了");
+			};
+			this.play_game = function(){
+				console.log("下班了打回小游戏");
+			};
+			this.coding = function(){
+				console.log("不停的敲代码....");
+			};
+			
+		}
+		var computer2 = new Computer("红色","E565");
+		console.log(computer2.type);
+		computer2.see_moving();
+		computer2.play_game();
+		
+		
+		// 字面量的方式创建对象
+		
+		var computer3 = {
+			color:"黑色",
+			type:"E565",
+			weight:2,
+			brand:"lenovo",
+			see_moving:function(){
+				console.log("可以看电影了")
+			},
+			play_game:function(){
+				console.log("打游戏，打游戏")
+			}
+		}
+		console.log(computer3.brand)
+		computer3.play_game();
+	</script>	
+</head>
+<body>
+</body>
+</html>

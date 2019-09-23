@@ -1,0 +1,71 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>while循环</title>
+</head>
+
+<body>
+	<script>
+		
+		// 首先要有计数器
+		// 循环终止条件
+		// 判断为真则执行循环语句
+		// 判断为假则跳出循环
+		
+		// 计算1-100之间所有整数的和
+		
+		var i = 0;
+		var sum = 0;
+		while(i<=100){
+			sum+=i;
+			i++;
+		}
+		console.log("1到100之间的整数和为"+sum)
+		
+		
+		// do-while 循环
+		
+		/*
+		语法
+		
+		do{
+		循环体
+		}while(条件);
+		
+		执行过程：
+		先执行一次循环体，然后判断条件是否成立，不成立则跳出循环，成立则执行循环体
+		然后再判断条件是否成立，成立则继续循环。否则跳出......
+		
+		
+		*/
+		
+		// 例子:
+		// 输出:哈哈，我又变帅了...10次
+		
+		var i=0;
+		do {
+			console.log("哈哈，我又变帅了");
+			i++;
+		}while(i<10);
+		
+		// 例子:
+		do{
+			// 把用户输入的结果储存在result变量中
+			var result = prompt("您觉得我帅吗? y/n");
+		}while(result!="y");
+		console.log("您真有眼光！！！");
+		
+		
+		// 总结while和do-while循环
+		
+		/*
+		while循环:先判断，后循环，有可能一次循环都不执行
+		
+		
+		do-while循环:先循环，后判断，至少执行一次循环体
+		
+		*/
+	</script>
+</body>
+</html>

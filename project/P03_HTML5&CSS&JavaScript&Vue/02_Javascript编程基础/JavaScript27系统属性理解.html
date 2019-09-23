@@ -1,0 +1,62 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>无标题文档</title>
+	<style>
+		
+		div{
+			height: 300px;
+			width: 300px;
+			
+		}
+	
+	</style>
+	<script>
+		// 例子：自己定义一个对象，实现系统的max的方法
+//		
+//		function Mymath(){
+//			// 定义一个max方法
+//			this.getmax = function(){
+//				var max=arguments[0];
+//				for(var i=0;i<arguments.length;i++){
+//					if (max<arguments[i]){
+//						max = arguments[i];
+//					}
+//				}
+//				return max;
+//			};
+//		}
+//		
+//		var mh=new  Mymath();
+//		var result;
+//		result = mh.getmax(10,-8,16,27,38,40)
+//		console.log(result)
+//		
+		
+		// 随机产生一个16进制的颜色值
+		// 封装成一个函数
+		
+		function getColor(){
+			var str="#";
+			num = ["0","1","2","3","4","5","6","7","8","9","a","b","c","d","e","f"];
+			for (var i=0;i<6;i++){
+				str += num[parseInt(Math.random()*16)];
+			}
+			return str
+		}
+		// 页面记载的事件
+		window.onload=function (){
+			// 在文档中通过id属性的值查找这个元素的（标签）.设置标签的背景
+			document.getElementById("dv").style.backgroundColor=getColor();
+		};
+		//console.log(getColor())
+	</script>
+	
+</head>
+
+<body>
+	
+	<div id="dv"></div>
+</body>
+</html>

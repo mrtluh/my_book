@@ -1,0 +1,104 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>函数</title>
+</head>
+
+<body>
+	<script>
+		// 求两个数中的最大值
+		function maxNum(x,y){
+			var maxnum
+			if (x<y){
+				maxnum = y;
+			}else{
+				maxnum=x;
+			}
+			return maxnum
+		}		
+		console.log(maxNum(100,99))
+		// 求三个数中的最大值
+		function maxNum2(x,y,z){
+			var maxnum
+			if (z>x){
+				if(z>y){
+					maxnum = z;
+				}else{
+					maxnum = y;
+				}
+			}else{
+				if (y>x){
+					maxnum = y;
+				}else{
+					maxnum =x;
+				}
+			}
+			return maxnum
+		}
+		console.log(maxNum2(9999,888,989))
+		// 判断一个数是不是素数
+		function getPrime(n){
+			var i = 2;
+			while (i<n){
+				if (n%i == 0){
+					return n+"不是素数";
+					break
+				}else{
+					i++;
+				}
+				
+			}
+			return n+"是素数"
+		}
+		console.log(getPrime(101))		   
+		// 求整数1-100的累加值，但要跳过个位数是3的数
+		
+		function getSum(){
+			var sum = 0;
+			for (var i=1;i<=100;i++){
+				if (i%10!==3){
+					sum += i
+				}
+			}
+			return sum
+		}
+		console.log(getSum())
+		// 求1-100之间不能被7整除的整数的和（用continue）
+		function getSum7(){
+			var sum = 0;
+			var i =1;
+			while(i<=100){
+				if(i%7==0){
+					i++;
+					continue;
+				}else{
+					sum +=i;
+					i++;
+				}
+			}
+			return sum
+		}
+		console.log(getSum7())
+		// 求200-300所有奇数的和
+		function getOdd(){
+			var sum = 0;
+			for (var i =200;i<=300;i++){
+				if (i%2==1){
+					sum += i
+				}
+			}
+			return sum
+		}
+		console.log(getOdd())
+		
+		
+		
+		
+		
+		
+		
+		
+	</script>
+</body>
+</html>

@@ -1,0 +1,352 @@
+.headr{
+    width: 100%;
+    height: 107px;
+}
+.heard-con{
+    position: relative;
+    width: 1200px;
+    margin: 0 auto;
+    height: 107px;
+
+}
+.headr-nav{
+    float: left;
+    position: absolute;
+    width: 600px;
+    height: 107px;
+    left: 25%;
+
+}
+.headr-nav li{
+    float: left;
+    width: 90px;
+    height: 50px;
+    line-height: 50px;
+    text-align: center;
+    margin-left: 20px;
+    font-size: 16px;
+    margin-top: 25px;
+}
+.headr-nav li a{
+    color: #222222;
+}
+.sptopfoot {
+    clear: both;
+    background:#ffffff;
+    height: 2px;
+    position: relative;
+}
+.spbottom {
+    background:#4AB344;
+    height: 2px;
+    width:90px;
+    position: absolute;
+    top: 0;
+    left:460px;
+    overflow: hidden;
+    transition: all 1s;
+}
+.headr-right{
+    position: relative;
+    float: right;
+    width: 154px;
+    height:42px;
+    margin-top: 30px;
+    text-align: center;
+    line-height: 42px;
+    overflow: hidden;
+    border: 1px solid #E6E6E6;
+
+}
+.hr-car{
+    position: absolute;
+    width: 300px;
+    height: 140px;
+    right:-1px;
+    line-height: 140px;
+    background-color: white;
+    color: #c6c6c6;
+    border: 1px solid #E6E6E6;
+}
+/*顶部导航结束*/
+.her-banner{
+    width: 100%;
+    height: 380px;
+    overflow: hidden;
+    margin: 0px auto;
+    background-image:url("../images/tban.jpg");
+    background-position: 50% 50%;
+    background-repeat: no-repeat no-repeat;
+}
+/*建议*/
+.content{
+    position: relative;
+    width: 1200px;
+    margin: 0 auto;
+}
+.recommand{
+    float: left;
+    height: 1000px;
+    width: 100%;
+}
+.rec-cont{
+    float: left;
+    width:100%;
+
+}
+.rec-left{
+    float: left;
+    width: 220px;
+    margin-top: 20px;
+}
+.classily{
+    width: 209px;
+    height: 199px;
+    border: 1px #DADADA solid;
+}
+.cltop{
+    width: 100%;
+    height: 45px;
+    background: #5FAD01;
+    line-height: 45px;
+    font-size: 16px;
+    color: white;
+}
+.cltop p{
+    padding-left: 10px;
+}
+.cltcon{
+    width: 188px;
+    height:143px;
+    margin:0 auto;
+    margin-top: 5px;
+}
+.cltcon p{
+    line-height: 47px;
+    height: 47px;
+    width: 100%;;
+    border-bottom:1px dashed #999999;
+}
+.cltcon p a {
+    color: #222222;
+}
+.service{
+    margin-top: 10px;
+    width: 209px;
+    height: 210px;
+    border: 1px #DADADA solid;
+}
+.sercon{
+    width: 188px;
+    height:170px;
+    margin:0 auto;
+    margin-top: 5px;
+}
+.qqs{
+    width: 100%;
+    height: 55px;
+    border-bottom:1px dashed #999999;
+}
+.qqs p{
+    margin-top: 5px;
+}
+.serOnline-img0 {
+    width: 21px;
+    height: 21px;
+    display: inline-block;
+    margin-right: 8px;
+    background: url(../images/qq.gif) no-repeat;
+}
+.marBL-10 {
+    margin: 5px 0 5px 0;
+    line-height: 32px;
+    font-size: 15px;
+    color: #666;
+}
+.worktime-header-img {
+    width: 27px;
+    height: 27px;
+    display: inline-block;
+    background: url(../images/serviceOnlineTime1.png) no-repeat;
+}
+.serOnline-list-v {
+    margin: 0 0 7px 5px;
+    _margin: 0 0 7px 3px;
+    color: #666;
+}
+
+
+.rec-right{
+    margin-top: 20px;
+    float: left;
+    width:980px;
+    height:1000px;
+    overflow: hidden;
+
+}
+.rec-top{
+    float: left;
+    width: 100%;
+    height: 445px;
+}
+.rt-left{
+    width: 390px;
+    height: 312px;
+    float: left;
+    margin: 50px 40px;
+}
+.rt-right{
+    width: 455px;
+    height: 212px;
+    float: left;
+    margin: 100px 25px;
+}
+.message{
+    float: left;
+    margin-left: 50px;
+    margin-top: 30px;
+    width: 940px;
+    height: 448px;
+}
+.siteFormMiddle{
+    width: 100%;
+    float: left;
+    margin-top: 10px;
+}
+.g_itext{
+    float: left;
+   width: 30.099999999999998%;
+    height: 34px;
+    padding-left: 10px;
+
+}
+.star {
+    font-family: 微软雅黑;
+    width: 1%;
+    float: left;
+    vertical-align: middle;
+    font-size: 14px;
+    color: red;
+    line-height: 40px;
+    margin-left: 2.5%;
+}
+.resize {
+    margin-left: 0;
+    height: 36px;
+    width: 93.3%;
+    _width: 90.3%;
+    float: left;
+    line-height: 36px;
+    padding: 6px 0;
+    border-radius: 2px;
+    border: 1px solid #8F8F8F;
+    color: #8C8C8C;
+    border-color: #DADADA;
+    font-size: 12px;
+}
+.g_textarea {
+    width: 93%;
+    _width: 90%;
+    height: 100px;
+    margin: 0;
+    padding: 0;
+    border-color: #DADADA;
+    border-radius: 2px;
+    font-size: 12px;
+    float: left;
+    max-height: 200px;
+    border: 1px solid #8F8F8F;
+}
+textarea {
+    -webkit-appearance: textarea;
+    background-color: white;
+    border: 1px solid;
+    border-image: initial;
+    -webkit-rtl-ordering: logical;
+    -webkit-user-select: text;
+    -webkit-box-orient: vertical;
+    cursor: auto;
+    padding: 2px;
+    white-space: pre-wrap;
+    word-wrap: break-word;
+}
+.siteFormItemCheckItem_N_U {
+    margin-right: 28px;
+    margin-bottom: 5px;
+    line-height: 15px;
+    vertical-align: middle;
+    float: left;
+}
+.siteFormItemCheckItem_N_U input {
+    height: 15px;
+    line-height: 15px;
+    vertical-align: middle;
+    margin: 0 3px 0 0;
+}
+input[type="radio"] {
+    -webkit-appearance: radio;
+    box-sizing: border-box;
+}
+.s_ibutton {
+    min-width: 140px;
+    width: 247px;
+    height: 48px;
+    line-height: 44px;
+    background: url("../images/button.jpg") no-repeat;
+    text-align: center;
+    display: inline-block;
+    cursor: pointer;
+
+}
+.middle{
+    color: white;
+}
+/*建议结束*/
+/*底部*/
+.footer{
+    width: 100%;
+    height: 566px;
+    float: left;
+    background: url("../images/footer.jpg")no-repeat center;
+}
+.ft-con{
+    width: 1200px;
+    margin: 0 auto;
+}
+.ft-top{
+    float:left;
+    width: 1200px;
+    height: 180px;
+    margin-top: 20px;
+    border-bottom: 1px solid;
+    border-collapse: separate;
+    border-spacing: 2px;
+    border-color: #848484;
+
+}
+.ft-b{
+    float: left;
+    width: 240px;
+    height: 200px;
+    margin-left: 60px;
+    margin-top: 50px;
+}
+.ft-b h3{
+    padding-bottom: 20px;
+    color: white;
+}
+.ft-b p{
+    line-height: 25px;
+    color: #92CA9D;
+}
+.banq{
+    float: left;
+    width: 100%;
+    height: 30px;
+    text-align: center;
+    margin-top: 65px;
+    color: #92CA9D;
+}
+.banq span img{
+    line-height:14px;
+}

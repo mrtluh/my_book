@@ -1,0 +1,92 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>关键字的使用</title>
+</head>
+
+<body>
+	<script>
+		
+		while (true){
+			console.log("哈哈。。。")
+			break
+		}
+		console.log("哈哈，我出来了")
+		
+		// 代码2
+		for (var i = 0;i<10;i++){
+			while (true){
+			console.log("哈哈。。。");
+			break
+			}
+			console.log("哈哈，我出来了")
+		}
+		// 求1-100的累加值，遇到个位为3的数则停止累加
+		var sum = 0;
+		for (var i=1;i<=100;i++){
+			if (i%3 !==0){
+				sum +=i
+			}
+		}
+		console.log("累加值为"+sum)
+		// 找到100-200之间的第一个可以被7整除的数字
+		for(var i=100;i<=200;i++){
+			if (i%7==0){
+				console.log(i+"是100-200之间第一个能被7整除的数");
+				break;
+			}
+		}
+		
+		
+		// continue关键字的使用：再循环中如果遇到continue关键字，直接开始下一次循环
+   		
+		// 求200-300之间所有奇数的和
+		var sum2 = 0;
+		var i =100;
+		while(i<=200){
+			if (i%2==0){
+				i++;
+				continue;
+			}
+			sum2 += i;
+			i++;
+		}	
+		
+		console.log("200-300之间所有奇数的和为"+sum2)
+		
+		// 求1-100的累加值，跳过个位数为3的数
+		var sum3=0;
+		var i=1;
+		while(i<=100){
+			if(i%10==3){
+				i++;
+				continue;
+			}
+			sum3 += i;
+			i++;
+		}
+		console.log("累加值为"+sum3)
+		
+		
+		// for 循环遍历数组
+		var arr = [10,20,30,40,50,60];
+		for (var i=0;i<arr.length;i++){
+			console.log(arr[i])
+		}
+		
+		// 找出数组中的最大值
+		var arr = [80,20,30,40,50,60];
+		var maxnum = arr[0]
+		for (var i=0;i<arr.length;i++){
+			if (arr[i] > maxnum){
+				maxnum=arr[i]
+			}
+		}
+		console.log(maxnum)
+		
+		
+		
+	</script>
+</body>
+</html>

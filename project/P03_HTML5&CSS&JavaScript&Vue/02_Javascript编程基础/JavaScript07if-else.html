@@ -1,0 +1,36 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>if-else语句</title>
+</head>
+
+<body>
+	
+	<script>
+		
+		// if-else 语法
+		
+		// 判断用户成绩
+		var score = Number(prompt("请您输入分数:"));
+		if(!isNaN(score)){
+			if (score>100){
+				console.log("请在0~100之间输入！！！")
+			}else if(score>90&&score<=100){
+				console.log("A级")
+			}else if(score>80){
+				console.log("B级")
+			}else if(score>70){
+				console.log("C级")
+			}else if(score>=60){
+				console.log("D级")
+			}else{
+				console.log("E级")
+			}
+		}else{
+			console.log("输入有误，请重新输入:")
+		}
+		
+	</script>
+</body>
+</html>

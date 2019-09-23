@@ -1,0 +1,47 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Array()对象2</title>
+	<script>
+		
+		var arr=[10,20,30,40,50,60]
+		// arr.forEach(函数(元素，索引，数组))遍历数组的一般方法 
+		arr.forEach(function(ele,index){
+			console.log(ele+"===="+index)
+		})
+		
+		// arr.indexof(元素值)找个某个元素的索引，返回某个元素的索引,没找到则返回-1
+		console.log(arr.indexOf(50))
+		
+		// arr.join("字符串")；--- 返回的是一个字符串,将列表转化为字符串
+		var result=arr.join("+");
+		console.log(result);
+		
+		// arr.map(函数)；---》数组中的每个元素都执行一次函数，把执行后的结果放到一个新的数组中
+		var result=arr.map(Math.sqrt);
+		console.log(result)
+		
+		// str.slice(开始的索引，结束的索引); 把截取的数组的值放在一个新的数组中，但是不包括结束索引对应的数组的值
+		var newarr = arr.slice(3,5);
+		console.log(newarr)
+		
+		// str.splice(开始的位置，要删除的个数，要插入或是替换的元素) 指定位置插入元素，或是替换或是删除元素
+		var arr=[10,20,30,40,45,60,70]
+		// 插入元素
+		arr.splice(3,0,35)
+		console.log(arr)
+		//替换元素
+		var arr=[10,20,30,40,45,60,70]
+		arr.splice(3,1,39)
+		console.log(arr)
+		//删除元素
+		var arr=[10,20,30,40,45,60,70]
+		arr.splice(3,1)
+		console.log(arr)
+	</script>
+</head>
+
+<body>
+</body>
+</html>

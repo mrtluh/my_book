@@ -1,0 +1,343 @@
+.headr{
+    width: 100%;
+    height: 107px;
+}
+.heard-con{
+    position: relative;
+    width: 1200px;
+    margin: 0 auto;
+    height: 107px;
+
+}
+.headr-nav{
+    float: left;
+    position: absolute;
+    width: 600px;
+    height: 107px;
+    left: 25%;
+
+}
+.headr-nav li{
+    float: left;
+    width: 90px;
+    height: 50px;
+    line-height: 50px;
+    text-align: center;
+    margin-left: 20px;
+    font-size: 16px;
+    margin-top: 25px;
+}
+.headr-nav li a{
+    color: #222222;
+}
+.sptopfoot {
+    clear: both;
+    background:#ffffff;
+    height: 2px;
+    position: relative;
+}
+.spbottom {
+    background:#4AB344;
+    height: 2px;
+    width:90px;
+    position: absolute;
+    top: 0;
+    left: 240px;
+    overflow: hidden;
+    transition: all 1s;
+}
+.headr-right{
+    position: relative;
+    float: right;
+    width: 154px;
+    height:42px;
+    margin-top: 30px;
+    text-align: center;
+    line-height: 42px;
+    overflow: hidden;
+    border: 1px solid #E6E6E6;
+
+}
+.hr-car{
+    position: absolute;
+    width: 300px;
+    height: 140px;
+    right:-1px;
+    line-height: 140px;
+    background-color: white;
+    color: #c6c6c6;
+    border: 1px solid #E6E6E6;
+}
+/*顶部导航结束*/
+.her-banner{
+    width: 100%;
+    height: 380px;
+    overflow: hidden;
+    margin: 0px auto;
+    background-image:url("../images/pban.jpg");
+    background-position: 50% 50%;
+    background-repeat: no-repeat no-repeat;
+}
+/*产品简介*/
+.content{
+    position: relative;
+    width: 1200px;
+    margin: 0 auto;
+}
+.recommand{
+    float: left;
+    height: 1100px;
+    width: 100%;
+}
+.rec-cont{
+    float: left;
+    width:100%;
+    margin-top: 20px;
+}
+.rec-left{
+    float: left;
+    width: 220px;
+}
+.classily{
+    width: 209px;
+    height: 199px;
+    border: 1px #DADADA solid;
+}
+.cltop{
+    width: 100%;
+    height: 45px;
+    background: #5FAD01;
+    line-height: 45px;
+    font-size: 16px;
+    color: white;
+}
+.cltop p{
+    padding-left: 10px;
+}
+.cltcon{
+    width: 188px;
+    height:143px;
+    margin:0 auto;
+    margin-top: 5px;
+}
+.cltcon p{
+    line-height: 47px;
+    height: 47px;
+    width: 100%;;
+    border-bottom:1px dashed #999999;
+}
+.cltcon p a {
+    color: #222222;
+}
+.service{
+    margin-top: 10px;
+    width: 209px;
+    height: 210px;
+    border: 1px #DADADA solid;
+}
+.sercon{
+    width: 188px;
+    height:170px;
+    margin:0 auto;
+    margin-top: 5px;
+}
+.qqs{
+    width: 100%;
+    height: 55px;
+    border-bottom:1px dashed #999999;
+}
+.qqs p{
+    margin-top: 5px;
+}
+.serOnline-img0 {
+    width: 21px;
+    height: 21px;
+    display: inline-block;
+    margin-right: 8px;
+    background: url(../images/qq.gif) no-repeat;
+}
+.marBL-10 {
+    margin: 5px 0 5px 0;
+    line-height: 32px;
+    font-size: 15px;
+    color: #666;
+}
+.worktime-header-img {
+    width: 27px;
+    height: 27px;
+    display: inline-block;
+    background: url(../images/serviceOnlineTime1.png) no-repeat;
+}
+.serOnline-list-v {
+    margin: 0 0 7px 5px;
+    _margin: 0 0 7px 3px;
+    color: #666;
+}
+
+
+.rec-right{
+    float: left;
+    width:970px;
+    height:1100px;
+    overflow: hidden;
+
+}
+.bd{
+    width:970px;
+    height:980px;
+    overflow: hidden;
+}
+.bd .bd1{
+    display: none;
+}
+.hd{
+    float: left;
+    margin-top: 15px;
+    width: 100%;
+    text-align: center;
+    height: 42px;
+}
+.hd ul{
+    float: left;
+}
+.hd li{
+    float: left;
+    line-height: 42px;
+    padding: 0 15px;
+}
+.hd li a.active{
+    color: #99f4a7;
+}
+.net{
+    line-height: 42px;
+    padding: 0 15px;
+    float: left;
+    width: 80px;
+    margin-left: 32%;
+}
+.next{
+    width: 80px;
+    line-height: 42px;
+    padding: 0 15px;
+    float: right;
+    margin-right: 32%;
+}
+
+
+
+.rcr{
+    float: left;
+    width: 226px;
+    height: 330px;
+    margin-left: 15px;
+}
+.rcr-top{
+    width: 226px;
+    height: 200px;
+    margin-left: 10px;
+    transition: all 0.5s;
+}
+.rcr-bot {
+    width: 226px;
+    height: 130px;
+    margin: 0 5px;
+}
+.rb-top{
+    width: 226px;
+    height: 30px;
+    text-align: center;
+    font-size: 16px;
+    border-bottom:1px dashed #999999;
+}
+.second_P{
+    padding-top: 15px;
+    width: 226px;
+    height: 20px;
+    text-align:center;
+}
+.fk-prop,.fk-prop-p{
+    font-size: 12px;
+    color: #4AB344;
+}
+.fk-prop-price{
+    color: #4AB344;
+    font-size: 18px;
+}
+.second_Marketprice {
+    color: #767676;
+    font-size: 12px;
+    text-decoration: line-through;
+}
+.buy{
+    float: left;
+    width: 100%;
+    margin-top: 15px;
+    height: 33px;
+    line-height: 33px;
+    text-align: center;
+}
+.second_mallBuy{
+    display: inline-block;
+    height: 33px;
+    width: 70%;
+    line-height: 33px;
+    border-radius: 3px;
+    text-decoration: none;
+    text-align: center;
+    padding: 0;
+    color: white;
+    font-size: 16px;
+    max-width: 180px;
+    letter-spacing: 0;
+    background-color:#4AB344 ;
+}
+
+/*产品结束*/
+/*底部*/
+.footer{
+    width: 100%;
+    height: 566px;
+    float: left;
+    background: url("../images/footer.jpg")no-repeat center;
+}
+.ft-con{
+    width: 1200px;
+    margin: 0 auto;
+}
+.ft-top{
+    float:left;
+    width: 1200px;
+    height: 180px;
+    margin-top: 20px;
+    border-bottom: 1px solid;
+    border-collapse: separate;
+    border-spacing: 2px;
+    border-color: #848484;
+
+}
+.ft-b{
+    float: left;
+    width: 240px;
+    height: 200px;
+    margin-left: 60px;
+    margin-top: 50px;
+}
+.ft-b h3{
+    padding-bottom: 20px;
+    color: white;
+}
+.ft-b p{
+    line-height: 25px;
+    color: #92CA9D;
+}
+.banq{
+    float: left;
+    width: 100%;
+    height: 30px;
+    text-align: center;
+    margin-top: 65px;
+    color: #92CA9D;
+}
+.banq span img{
+    line-height:14px;
+}

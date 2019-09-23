@@ -1,0 +1,133 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>函数的作用域</title>
+</head>
+
+<body>
+	<script>
+		
+		// 函数的作用域
+		//求两个数中的最大值
+		
+		function getMax(num1,num2){
+			return num1>num2?num1:num2;
+		}
+		
+		// 全局变量
+		var num1 = 40;
+		var num2 = 20;
+		
+		console.log(getMax(num1,num2))
+		
+		// 求三个数中的最大值
+		
+		function getMax2(x,y,z){
+			return x>y?(x>z?x:z):(y>z?y:z);
+		}
+		
+		console.log(getMax2(90,800,100))
+		
+		
+		// 判断一个数是不是质数
+		
+		function getPrimeNum(num){
+			for (var i=2;i<num;i++){
+				if (num%i==0){
+					console.log(num+"/"+i+"="+num/i)
+					return false;
+				} //end if
+			} // end for
+			return true;
+		}
+		console.log(getPrimeNum(1256)?"是质数":"不是质数")
+		
+		
+		//求一组数字中的最大值
+		
+	
+		function getArrayMax(array){
+			var max = array[0];
+			for (var i = 0;i < array.length;i++){
+				if (max < array[i]){
+					max = array[i]
+				}
+			}
+			return max
+		}
+		console.log(getArrayMax([10,58,66,21,69,54,25,-58,-68]))
+		
+		
+		// 实现数组的翻转
+		function reverseArray(array){
+			for(var i = 0;i < array.length/2;i++){
+				var tem = array[i];
+				array[i] = array[array.length-1-i];
+				array[array.length-1-i] = tem;
+			} //end for
+			return array
+		}
+		
+		console.log(reverseArray([12,78,23,56,44,98,75]))
+		
+		// 通过函数实现冒泡排序
+		
+		function sortArray(array){
+			// 控制比较轮数，
+			for (var i=0;i < array.length-1;i++){
+				//控制比较次数
+				for (var j = 0;j<array.length-i-1;j++){
+					if (array[j]>array[j+1]){
+						
+						var temp = array[j];
+						array[j] = array[j + 1];
+						array[j+1] = temp;
+					} // end if
+				} // end for
+			} // end for
+			return array;
+		}
+		console.log(sortArray([56,89,55,64,-99,21,100,54,74]))
+		
+		// 求一个数的阶乘
+		function getJieChen(num){
+			var result=1;
+			for (var i = 1;i <= num;i++){
+				result *= i;
+			}
+			return result;
+		}
+		console.log(getJieChen(5))
+		
+		// 求一个数字的阶乘和
+		
+		function getJiechengSum(num){
+			var sum = 0;
+			for (var i = 1;i<=num;i++){
+				sum += getJieChen(i);
+			}
+			return sum
+		}
+		console.log(getJiechengSum(5))
+		
+		// 求第某个月的斐波那契数列
+		
+		function getFib(n){
+			var num1 = 1;
+			var num2 = 1;
+			var sum;
+			if (n<3){
+				return 1;
+			}
+			for (i = 3;i<=n;i++){
+			sum = num1+num2;
+			num1 = num2;
+			num2 = sum;
+			}//end if
+			return sum;
+		}
+		console.log(getFib(12))
+	</script>
+</body>
+</html>

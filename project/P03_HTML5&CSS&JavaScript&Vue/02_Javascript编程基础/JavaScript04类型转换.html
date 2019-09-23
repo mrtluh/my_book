@@ -1,0 +1,83 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>类型转换</title>
+</head>
+
+<body>
+	<script>
+		// 类型转换
+		
+		// 转数字 parseInt()
+//		console.log(parseInt("10")); //10
+//		console.log(parseInt("10a")); //10
+//		console.log(parseInt("s10sdsadasd")); //NaN
+//		console.log(parseInt("1ada0")); //1
+//		console.log(parseInt("10.98")); //10
+//		console.log(parseInt("10.98fasd")); //10
+//
+//		
+//		// 转小数 parseFloat()
+//		console.log(parseFloat("10")); //10
+//		console.log(parseFloat("10a")); //10
+//		console.log(parseFloat("g10")); //NaN
+//		console.log(parseFloat("1asd0")); //1
+//		console.log(parseFloat("10.98")); //10.98
+//		console.log(parseFloat("10.98fasd")); //10.98
+//		
+//		// 转数字 Number()
+//		console.log(Number("10")); //10
+//		console.log(Number("10a")); //NaN
+//		console.log(Number("g10")); //NaN
+//		console.log(Number("1ada0")); // NaN
+//		console.log(Number("10.98")); //10.98
+//		console.log(Number("10.98fasd")); //NaN
+
+		// 总结：想要转整数用parseInt(),想要转小数用盘parseFloat()
+		// 想要转数字： Number(),要比上面两种方式严格
+		
+		// 其他类型转字符串类型
+		// 1 . toString()
+		
+		var num=10;
+		console.log(num.toString()) // 字符串类型
+		
+		//2 .String(); 
+		
+		var num1 = 20;
+		console.log(String(num1))
+		
+		// 如果变量有意义调用.tostring()使用转换,一般用toString()
+		// 如果变量没有意义使用String()转换
+		
+//		var num2;
+//		console.log(num2.toString())
+//		var num3=null;
+//		console.log(num3.toString())
+		
+		// 这个可以
+		var num2;
+		console.log(String(num2))
+		var num3=null;
+		console.log(String(num3))
+		
+		
+		// 其他类型转布尔类型
+		// 1 Boolean(值);
+		
+		console.log(Boolean(1)) //true
+		console.log(Boolean(0)) //false
+		console.log(Boolean(11)) //true
+		console.log(Boolean(-10)) //true
+		console.log(Boolean("哈哈")) //true
+		console.log(Boolean("")) //false
+		console.log(Boolean(null)) //false
+		console.log(Boolean(undefined)) //false
+	
+	    var srt1 = 10;
+		console.log(-str); //加负号就是负数
+	
+	</script>
+</body>
+</html>

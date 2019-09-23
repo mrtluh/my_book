@@ -1,0 +1,34 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>无标题文档</title>
+	<script>
+		
+		// 自定义构造函数创建对象
+		// 函数和构造函数的区别；首字母是不是大写，调用没有什么区别
+		function Person(name,age){
+			console.log("我是构造函数")
+			this.name = name;
+			this.age = age;
+			this.sayHi= function(){
+				console.log("我叫:"+this.name+"  今年"+this.age+"岁了");
+			};
+			
+		}
+		// 自定义构造函数创建对象
+		
+		var per1 = new Person("小明",22);
+		console.log(per1.name)
+		per1.sayHi();
+		
+		var per2 = new Person("小红",19);
+		console.log(per2.name)
+		per2.sayHi();
+		console.log(per1 instanceof Person)
+	</script>
+</head>
+
+<body>
+</body>
+</html>

@@ -1,0 +1,97 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>字符串类型</title>
+	<script>
+//		//  1 str.toLocaleLowerCase() 方法根据特定于语言环境的案例映射，返回调用字符串转换为小写的值
+//		
+//		var str="HELLO";
+//		str=str.toLocaleLowerCase();
+//		console.log(str);
+//		
+//		//  2 str.toLocaleUpperCase() 方法根据特定于语言环境的案例映射，返回调用字符串转换为大写的值
+//		
+//		var str="hello";
+//		str=str.toLocaleUpperCase();
+//		console.log(str);
+//		
+//		//  3 str.trim() 干掉字符串两端的空格
+//		
+//		var str=" hello ";
+//		str=str.trim();
+//		console.log(str);
+		
+		// 案例1
+		
+		var str = "我爱最帅的杨哥，太帅了";
+		var key = "杨哥";
+		//先获取要截取字符串的的索引的位置
+		var index = str.indexOf(key);
+		// 截取的位置和宽度
+		str=str.substr(index,2);
+		console.log(str);
+		
+		// 案例2 找到这个字符串中所有o的出现的位置
+		
+//		var str="hello wod odd ott fbo bdto";
+//		var arr =[];
+//		for (var i=0;i<str.length;i++){
+//			var index;
+//			var index2;
+//			if (arr.length == 0){
+//				index2 = 0;
+//				index=str.indexOf("o",index2);	
+//			}else{
+//				index2=arr[arr.length-1];
+//				index=str.indexOf("o",index2+1);
+//			}
+//			arr[arr.length]=index;
+//			//console.log(index2)
+//			if (index+1 >= str.length){
+//				break;
+//			}
+//		}
+//		console.log(arr)
+		
+//		// 优化后的代码
+//		var str="hello wod odd ott fbo bdto";
+//		var index=0;
+//		// 要找的字符串
+//		var key="o"
+//		while((index = str.indexOf(key,index))!=-1){
+//			console.log(index);
+//			index += key.length;
+//		}
+		
+		// 案例3统计字符串中字符出现的次数jhjnmybyteritebsqrellst
+		var str="jahJjkDdasdjkjjasJJhhHjjadhjdsahjuuoops";
+		
+		// 第一步把所有的字母都转换成大写或是小写
+		str=str.toLocaleLowerCase();
+		
+		// 第二步创建一个空的对象，目的把字母作为键，次数作为值
+		var obj={};
+		
+		// 第三步，遍历字符串，获取每个字母
+		
+	    for(var i=0;i<str.length;i++){
+			//判断对象中是否包含这个键
+			key=str[i];
+			if(obj[key]){
+				obj[key]++;
+			}else{
+				obj[key] =1;
+			}
+		}
+		//console.log(obj)
+		// 遍历对象显示每个字母
+		for(var key in obj){
+			console.log(key+"这个字母出现了"+obj[key]+"次。")
+		}
+	</script>
+</head>
+
+<body>
+</body>
+</html>

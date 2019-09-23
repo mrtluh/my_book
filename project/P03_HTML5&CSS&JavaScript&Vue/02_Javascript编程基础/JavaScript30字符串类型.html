@@ -1,0 +1,84 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>字符串对象</title>
+	
+	<script>
+		// 字符串对象
+		
+		//string---->字符串类型---基本类型
+		//String---->字符串类型---应用类型 
+		
+		//String----->字符串类型<br>
+		// js中是没有字符类型的
+		// 字符串可以看成是字符组成的数组，可以用for循环遍历
+		// 字符串可以通过索引访问字符串中的某个值
+		// js中无论是单引号还是双引号都是字符串的类型
+		
+		//字符船的值之所以改变了是因为其指向改变了，并不是其值改变了
+		// 字符串的特性:不可变性，字符串的值是不能改变
+		var str="hello";
+		str[1]="W";
+		console.log(str); //输出hello，值不改变
+		
+		
+		//字符串的常用属性
+//		//1  str.length字符串的长度
+//		var str="sakjhjjska";
+//		console.log(str.length);
+//		//2  str.chartAt()获取字符串中的指定字符,超出索引是空字符串
+//		var result=str.charAt(6)
+//		console.log(result)
+		
+		
+		
+		//实例方法：--->必须通过new的方式创建的对象（实例对象）来调用的方法
+		//静态方法：--->直接通过大写的构造函数的名字调用的方法（直接通过大写的对象名字调用的
+		
+//		//3  String.fromChartCode输出指定的ASCII编码的字符
+//		var str=String.fromCharCode(65);
+//		console.log(str);
+//		
+//		var str=String.fromCharCode(83,79,83);
+//		console.log(str);
+//		
+//		//4  str.concat(string2,string3[,...,stringN])方法将一个或多个字符串与原字符串合并，形成一个新的字符串并返回
+//		
+//		var str="人生"	
+//		var result = str.concat(["苦短","我用"],"Python")
+//		console.log(result)
+		
+//		//5  str.insexOf(要找的字符串)返回指定字符的索引，没有找到就返回-1
+//		var str="小苏是帅，是真的好帅呀";
+//		var index = str.indexOf("小苏");
+//		var index2 = str.indexOf("丑");
+//		var index3 = str.indexOf("是",3); //从指定位置找
+//		console.log(index);
+//		console.log(index2);
+//		console.log(index3);
+		
+//		//6  str.lastIndexOf(要找的字符串)，从后向前找，但返回的索引任然是从左向右的方式，没有找到就返回-1
+//		var str="小苏是帅，是真的好帅呀";
+//		var index = str.lastIndexOf("小苏");
+//		var index2 = str.lastIndexOf("丑");
+//		var index3 = str.lastIndexOf("是",3); //从指定位置找
+//		console.log(index);
+//		console.log(index2);
+//		console.log(index3);
+		
+		//7  str.replace("原来的字符串","用来替换的字符串")
+		var str="小苏是帅，是真的好帅呀";
+		if (str.indexOf("小苏") !=-1){
+			str = str.replace("小苏","小杨");
+		}else{
+			console.log("不存在")
+		}
+		console.log(str);
+		
+	</script>
+</head>
+
+<body>
+</body>
+</html>

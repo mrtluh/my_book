@@ -1,0 +1,35 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>创建对象</title>
+	
+	
+	<script>
+	// 如何一次性创建多个对象？把创建对象的代码封装在一个函数中
+		
+		function creatObject(name,age){
+			var obj = new Object();
+			obj.name = name;
+			obj.age = age;
+			obj.sayHi= function(){
+				console.log("阿尼哈斯哎呦,我叫"+obj.name+"我今年"+this.age+"岁了");
+			};
+			return obj;
+		}
+		// 创建一个人物对象
+		var per1 = creatObject("小芳",18);
+		per1.sayHi();
+		
+		// 再创建一个人物对象
+		var per2 = creatObject("小明",20);
+		per2.sayHi();
+		
+		
+		
+	</script>
+</head>
+
+<body>
+</body>
+</html>

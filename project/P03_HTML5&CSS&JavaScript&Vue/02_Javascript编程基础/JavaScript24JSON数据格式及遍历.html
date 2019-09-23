@@ -1,0 +1,48 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>JSon数据的遍历</title>
+	
+	<script>
+		
+		
+		// 对象：有属性和方法，特指的某个事物
+		// 对象：一组无序属性键值对的集合，属性可以是任意的类型
+		
+		
+		// JSON格式的数据：一般都是成对的，是键值对。
+		//JSON也是一个对象，数据是成对的，一般json格式的数据无论是键还是值都是用双引号括起来的
+		
+		var obj={
+			name:"乔峰",
+			age:10
+		}
+		
+		var json={
+			"name":"小明",
+			"age":"10",
+			"sex":"男"
+		}
+		//对象的遍历
+		
+		for (var key in json){
+			console.log(key);
+			console.log(json[key]);
+		}
+		
+		// 简单类型和复杂类型
+		
+		// 原始数据类型:number,string,boolean,undefined,null,object
+		// 基本类型  number，string，boolean
+		// 复杂类型  object
+		// 空类型   null undefined
+		
+		//值类型之间传递的是值
+		//引用类型之间传递的是地址（也是引用）
+	</script>
+</head>
+
+<body>
+</body>
+</html>

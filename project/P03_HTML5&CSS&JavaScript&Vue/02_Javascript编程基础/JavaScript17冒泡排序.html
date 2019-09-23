@@ -1,0 +1,30 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>冒泡排序</title>
+</head>
+
+<body>
+	<script>
+		
+		// 冒泡排序 吧所有数据按照一定的顺序进行排列（从大到小，从小到大）
+		
+		var arr=[80,50,90,10,20,55,63,45];
+		// 控制比较的轮数
+		for (var i = 0;i<arr.length-1;i++){
+			// 控制比较的次数
+			for(var j = 0;j<arr.length-1-i;j++){
+				// 如果前面的数比后面的数大，则交换位置
+				if (arr[j]>arr[j+1]){
+					var temp = arr[j];
+					arr[j] = arr[j+1];
+					arr[j+1] =temp;
+				}
+			}
+		}
+		
+		console.log(arr)
+	</script>
+</body>
+</html>
