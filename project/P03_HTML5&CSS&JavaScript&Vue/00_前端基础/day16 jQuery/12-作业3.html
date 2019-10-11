@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script src="./js/jquery-1.12.4.min.js"></script>
+    <script>
+        // 根据接口文档的描述编写代码。请使用$.ajax()和$.get()两种方式实现。
+            // 该接口为虚拟的 不作为真正的服务存在
+
+            // 后台地址 178.33.3.3/getdata.html
+
+            // 提交方式 GET
+
+            // 提交数据 需要两个参数(参数 1 是 name 表示数据的名称，参数 2 是 uid 表示当前用户的编号)
+
+            // 返回数据为 JSON
+        $(function(){
+            $.ajax({
+                url:"178.33.3.3/getdata.html",
+                type:"GET",
+                dataType:"JSON",
+                data:{name:"test", uid:'123456789'},
+                success:function(){
+                    alert("成功了");
+                },
+                error:function(){
+                    alert("失败了");
+                },
+                async:true,
+            });
+        });
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

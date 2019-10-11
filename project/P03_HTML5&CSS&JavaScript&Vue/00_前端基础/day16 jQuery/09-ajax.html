@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script src="./js/jquery-1.12.4.min.js"></script>
+    <script>
+        $(function(){
+
+            $.get(
+                "http://www.honmon.xyz/Poetry.html",
+                {name:"feng"},
+                function(response, status){
+                    alert("成功了" + response.result[0].content);
+                    $("p1").html(response.result[0].content)
+                },
+                "JSON"
+            ).error(function(){
+                alert("网络异常")
+            })
+        })
+    
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

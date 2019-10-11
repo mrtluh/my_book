@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script src="./js/jquery-1.12.4.min.js"></script>
+    <script>
+        $(function(){
+            console.log("p1标签的内容是"+$("#p1").html());
+            console.log("p1的ID属性"+$("#p1").prop("id"));
+
+            $("#p1").html("hello");
+            $("#p1").append("妹子");
+            $("#p1").prop({background:""});
+
+
+            console.log($("#input1").prop("value"));
+            console.log($("#input1").val());
+
+            $("#a1").prop({href:"http://ntlias-stu.boxuegu.com/#/login"});
+            $("#input1").prop({background:"red"});
+
+            console.log("css样式:" + $("#p1").css('background'))
+        })
+    </script>
+</head>
+<body>
+        <p id="p1" style="background: red">这是一个段落</p>
+        <input id="input1" type="text">
+        <a id="a1" href="http://www.baidu.com">这是一个链接</a>
+</body>
+</html>

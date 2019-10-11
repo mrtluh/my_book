@@ -1,0 +1,44 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script>
+        window.onload = function () {
+            // ES6.0 箭头函数-->作用:当js作用域嵌套的时候 this的指向window;==>以前 操作的对象
+            // 写法 : function (){}
+            // 箭头: ()=>{}
+            //      response => {}
+
+
+        var oBtn = document.getElementById('btn')
+
+        oBtn.onclick = function () {
+
+            console.log('嵌套之前this----',this)
+            // 点击按钮 1秒钟之后 弹出提示框
+
+            setTimeout(() => {
+
+                // alert('谈提示框')
+                // 修改按钮的背景色
+
+                console.log('嵌套之后后this----',this)
+                this.style.background = "red"
+
+            },1000)
+        }
+
+
+
+        }
+    </script>
+</head>
+<body>
+    <button id="btn">点击按钮</button>
+
+</body>
+</html>

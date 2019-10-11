@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script src="./js/jquery-1.12.4.min.js"></script>
+    <script>
+        $(function(){
+            $(btn1).click(function(){
+                console.log("客官，您点了什么菜")
+            });
+
+            $(i1).focus(function(){
+                console.log("客官请输入")
+            });
+            
+            $(i1).blur(function(){
+                console.log("客官慢走")
+            });
+
+            $("ul li").mouseover(function(){
+                console.log("进入了");
+                $(this).css({background:"red"});
+            });
+
+            $("ul li").mouseout(function(){
+                console.log("出去了");
+                $(this).css({background:"pink"});
+            })
+        })
+    </script>
+</head>
+<body>
+     <ul>
+         <li>元素1</li>
+         <li>元素2</li>
+         <li>元素3</li>
+         <li>元素4</li>
+         <li>元素5</li>
+     </ul>
+     <button id="btn1">点我</button>
+     <input id="i1" type="text">
+</body>
+</html>

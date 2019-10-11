@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script src="./js/vue.js"></script>
+    <script>
+        window.onload = function(){
+                var vm = new Vue({
+                    el:".box",
+                    data:{
+                        my_list:['北京','杭州','上海','深圳','南京'],
+                        my_dict:{
+                            name:"小明",
+                            age:20,
+                            height:175,
+                            gender:true,
+                        },
+                        objList:[
+                                {
+                                name:'小明',
+                                age:20
+                                },
+                                {
+                                name:'小红',
+                                age:21
+                                }
+                                ],
+                    }
+                })
+        }
+    </script>
+</head>
+<body>
+        <div class="box">
+            <ul>
+                <li v-for="item in my_list">{{ item }}</li>
+            </ul>
+            <ul>
+                <li v-for='(item,index) in my_list'>第{{index + 1}}个城市-----{{item}}</li>
+            </ul>
+
+            <ul>
+                <li v-for="(value,key) in my_dict">{{key}}-----{{value}}</li>
+            </ul>
+
+            <ul>
+                <li v-for='item in objList'>{{item.age}}</li>
+            </ul>
+        </div>
+</body>
+</html>

@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script>
+    
+        var json_data = '{"name":"小明","age":20,"add":"北京"}'       
+        // JSON数据转化为JS对象
+        var Ojson = JSON.parse(json_data);
+        alert(Ojson.add);
+        // JS对象转化为JSON字符串
+        var json_data2 = JSON.stringify(Ojson);
+        alert(json_data2 + typeof(json_data2));
+    </script>
+</head>
+<body>
+        
+</body>
+</html>

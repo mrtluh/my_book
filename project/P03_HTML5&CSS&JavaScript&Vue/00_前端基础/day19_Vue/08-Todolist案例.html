@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>todolist</title>
+	<style type="text/css">
+		.list_con{
+			width:600px;
+			margin:50px auto 0;
+		}
+		.inputtxt{
+			width:550px;
+			height:30px;
+			border:1px solid #ccc;
+			padding:0px;
+			text-indent:10px;			
+		}
+		.inputbtn{
+			width:40px;
+			height:32px;
+			padding:0px;
+			border:1px solid #ccc;
+		}
+		.list{
+			margin:0;
+			padding:0;
+			list-style:none;
+			margin-top:20px;
+		}
+		.list li{
+			height:40px;
+			line-height:40px;
+			border-bottom:1px solid #ccc;
+		}
+
+		.list li span{
+			float:left;
+		}
+
+		.list li a{
+			float:right;
+			text-decoration:none;
+			margin:0 10px;
+		}
+	</style>
+	<script type="text/javascript" src="js/vue.min.js"></script>
+	<script type="text/javascript">
+	window.onload = function () {
+			var vm = new Vue({
+                el:".list_con",
+                data:{
+                    inputtxt:"",
+                    datalist:['学习css','学习html','学习javascrip'],
+                },
+                methods:{
+                fnAdd:function(){
+                        if (this.inputtxt == ''){
+                            alert("请输入数据!!!")
+                        }else{
+                            this.datalist.push(this.inputtxt)
+                        }           
+                },
+                fnDel:function(index){
+                        this.datalist.splice(index,1)
+                },
+                fnUp:function(index){
+                    var current = this.datalist[index];
+                    this.datalist.splice(index,1)
+                    this.datalist.splice(index-1,0,current)
+                },
+                fnDown:function(index){
+                    var current = this.datalist[index];
+                    this.datalist.splice(index,1)
+                    this.datalist.splice(index+1,0,current) 
+                    }
+                }
+            })
+	}
+</script>	
+</head>
+<body>
+
+	<div class="list_con">
+	<h2>To do list</h2>
+		<input v-model='inputtxt' type="text" name="" id="txt1" class="inputtxt">
+		<input v-on:click="fnAdd" type="button" name="" value="增加" id="btn1" class="inputbtn">
+		
+		<ul id="list" class="list">
+				
+			<li v-for='(item,index) in datalist'>
+                <span>{{ item }}</span>
+                <a v-on:click="fnUp(index)" href="javascript:;" class="Up">↑</a>
+                <a v-on:click="fnDown(index)" href="javascript:;" class="Down">↓</a>
+                <a v-on:click="fnDel(index)" href="javascript:;" class="Del">删除</a>
+            </li>
+
+		</ul>
+
+	</div>
+</body>
+</html>

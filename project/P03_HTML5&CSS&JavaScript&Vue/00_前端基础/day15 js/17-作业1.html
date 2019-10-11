@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script src="./js/jquery-1.12.4.min.js"></script>
+    <script>
+        // 在网页上设置一个按钮，在用户点击按钮时，定时5秒后关闭窗口
+        window.onload = function(){
+            var sec = 5;
+            var oBtn = document.getElementById("btn1");
+            oBtn.onclick = function(){
+                setTimeout(function(){
+                    window.close();
+                }, 5000)
+
+                setInterval(function(){
+                    sec -= 1;
+                    var oP = document.getElementById("p1");
+                    oP.innerHTML = "还有"+sec+"秒关闭窗口";
+                    },1000)
+            }
+        }
+
+        
+    
+    </script>
+
+</head>
+<body>
+        
+        <button id="btn1">关闭窗口</button><br>
+
+        <p1 id="p1"></p1>
+    
+        
+</body>
+</html>

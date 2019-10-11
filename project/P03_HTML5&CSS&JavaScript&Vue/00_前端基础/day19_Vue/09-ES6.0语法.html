@@ -1,0 +1,49 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script>
+        window.onload = function () {
+
+            // 6.0 变量关键字 let const
+            // 5.o var  先调用 后定义 不报错--undefined
+            // alert(iOne)
+            // var iOne = 100
+
+            // let 不能先调用 后定义
+            // let iOne = 2100
+
+            // 常量--不能修改
+            const iTwo = 100;
+            // iTwo = 200
+
+
+            // 对象的简写: 变量的名字===属性的名字
+            let name = "对象的简写"
+            let age = 18
+            let fnAlert = function () {
+                alert('简写')
+            }
+
+            let person = {
+                name,
+                age,
+                fnAlert,
+            }
+
+            alert(person.name)
+            person.fnAlert()
+
+
+        }
+    </script>
+</head>
+<body>
+
+
+</body>
+</html>

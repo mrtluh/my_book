@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script src="./js/vue.js"></script>
+    <script>
+        window.onload = function(){
+            var vm = new Vue({
+                el:".box",
+                data:{
+                    content:"",
+                    context:"",
+                    sex:"",
+                    love:[],
+                    address:"北京",
+                }
+            })
+        }
+    </script>
+</head>
+<body>
+        <div class="box">
+            <!--  单行文本框 -->
+            <input v-model='content' type="text">
+            <p>{{ content }}</p>
+             <!-- 多行文本框     -->
+             <textarea v-model="context" name="my_intru" id="01234" cols="30" rows="10"></textarea>
+             <p>{{ context}}</p>
+             <!-- 单选框 -->
+             <label for="">请选择您的性别</label>
+             <input type="radio" name="sex" value="男" v-model="sex">
+             <input type="radio" name="sex" value="女" v-model="sex">
+             <h1>{{sex}}</h1>
+             <!-- 04.多选框 -->
+             <label for="">请输入您的爱好</label><br>
+             <input type="checkbox" name="love"  value="跑步" v-model="love">跑步
+             <input type="checkbox" name="love"  value="唱歌" v-model="love" >唱歌
+             <input type="checkbox" name="love"  value="看电影" v-model="love">看电影
+             <h5 v-if="love == ''"></h5>
+             <h5 v-elif="love != null">{{love}}</h5>
+             <!-- 05.下拉框 -->
+             <select name="addr" id="" v-model="address">
+                 <option value="北京">北京</option>
+                 <option value="上海">上海</option>
+                 <option value="深圳">深圳</option>
+                 <option value="广州">广州</option>
+             </select>
+                <p>{{ address}}</p>
+        </div>
+    
+
+</body>
+</html>

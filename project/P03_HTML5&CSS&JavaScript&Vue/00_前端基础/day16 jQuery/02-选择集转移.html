@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script src="./js/jquery-1.12.4.min.js"></script>
+    <script>
+        $(function(){
+            // $("#l4").prev().css({background:"yellow"});
+            // $("#l4").next().css({background:"brown"});
+            // $("#l4").prevAll().css({background:"green"});
+            // $("#p2").parent().css({background:"red"});
+            // $("#l4").children().css({background:"blue"});
+            // $("#l4").siblings().css({background:"pink"})
+
+            // .find(子标签的选择器，转移到子标签上面)
+            $("#l4").find("p").css({background:"red"})
+
+        });
+    </script>
+</head>
+<body>
+    <div>
+        <ul>
+            <li>元素1</li>
+            <li>元素2</li>
+            <li>元素3</li>
+            <li>元素4</li>
+            <li id="l4">
+                <p id="p2">段落</p>
+                <img src="./img/i5.jpg" alt="">
+            </li>
+            <li>元素5</li>
+            <li>元素6</li>
+        </ul>
+    </div>
+</body>
+</html>

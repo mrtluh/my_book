@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>表单提交</title>
+</head>
+<body>
+    <form action="http://192.168.18.129:8888/regester.html" method="POST">
+        <label for="aaa">姓名:</label>
+        <input type="text" name="name" id="aaa"> <br>
+        <label for="">密码:</label>
+        <input type="password" name="passwd"> <br>
+        <label for="">爱好:</label>
+        <input type="checkbox" name="love" value="sing">唱歌
+        <input type="checkbox" name="love" value="ball">打球
+        <input type="checkbox" name="love" value="car">飙车
+        <input type="checkbox" name="love" value="beat">拳击 <br>
+        <label for="">性别:</label> 
+        <input name="sex" type="radio" value="man"> 男
+        <input name="sex" type="radio" value="woman"> 女
+        <input name="sex" type="radio" value="nicai"> 保密 <br>
+        <label for="">住址:</label> 
+        <select name="address" id="">
+            <option value="beijing">北京</option>
+            <option value="shanghai">上海</option>
+            <option value="hangzhou">杭州</option>
+            <option value="shenzheng">深圳</option>
+        </select> <br>
+        <label for="">上传照片:</label> 
+        <input type="file" name="file" value="picture"> <br>
+        <label for="">重置:</label> 
+        <input type="reset" name="reset" value="True"> <br>
+        <button>确认</button> <br>
+        <label for="">提交:</label> <input type="submit"> <br>
+        <textarea name="introduce_myself" id="" cols="30" rows="10">介绍一下自己</textarea>
+    
+
+
+
+
+
+    </form>
+</body>
+</html>

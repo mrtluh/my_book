@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script src="./js/jquery-1.12.4.min.js"></script>
+    <script>
+        $(function(){
+            // 有如下 JSON 数据, 请编写 JS代码取出其中jpg图片 URL。
+            var oJSON = '{"code":0,"msg":"success","data":{"ct": {"iv":1,"ivcv":1,"tag":1,"tn":"","vmcrr":0,"vmcm":""}, "rl":[{"rid":6613818,"rn":"新主播第三天直播 6613818","uid":276511819,"nn":"甜甜的馨啊","cid1":2,"cid2":311,"cid3":0,"iv":0,"av":"avatar_v3/201907/b6316b41a12948b8af6211e26507b29c","ol":54845,"url":"/6613818","c2url":"/directory/game/XX","c2name":"颜值","icdata":{"216":{"url":"https://sta-op.douyucdn.cn/dy-listicon/pk-web-top3-v3.png","w":0,"h":0}},"dot":2103,"subrt":0,"topid":0,"bid":0,"gldid":0,"rs1":"https://rpic.douyucdn.cn/live-cover/appCovers/2019/07/18/6613818_20190718190837_big.jpg/dy1","rs16":"https://rpic.douyucdn.cn/live-cover/appCovers/2019/07/18/6613818_20190718190837_small.jpg/dy1","utag":null,"rpos":0,"rgrpt":1,"rkic":"","rt":2103,"ot":0,"clis":2,"chanid":0,"icv1":[[{"id":216,"url":"https://sta-op.douyucdn.cn/dy-listicon/web-pk-hours-top3-v3.png","score":997,"w":0,"h":0}],[],[],[]],"ioa":0,"od":""}]}}'
+            var jSo_data = JSON.parse(oJSON)
+            // $("#p1").html(JSON.stringify(jSo_data.data))
+            $("#p1").html(JSON.stringify(jSo_data.data.rl[0]));
+            var rl_arr = jSo_data.data.rl[0];
+            var ic_data = rl_arr.icdata;
+            var is1 = rl_arr.is1;
+            
+    
+            $("#div1").append(JSON.stringify(ic_data));
+            $("#div1").append(JSON.stringify(is1));
+        })
+    </script>
+</head>
+<body>
+        <p id="p1"></p>
+        <div id="div1"></div>
+        <div id="div2"></div>
+</body>
+</html>

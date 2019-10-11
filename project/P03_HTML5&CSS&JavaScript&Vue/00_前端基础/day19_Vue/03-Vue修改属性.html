@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script src="./js/vue.js"></script>
+    <script>
+        window.onload = function(){
+            var vm = new Vue({
+                el:".box",
+                data:{
+                    content:"操作数据",
+                    linkData:"传智播客",
+                    url:'http://ntlias-stu.boxuegu.com/#/login',
+                    linkdata:'http://ntlias-stu.boxuegu.com/#/login',
+                }
+            })
+        }
+    </script>
+</head>
+<body>
+    <div class="box">
+        <a href="url" target="_black">{{linkData}}</a>
+        <a v-bind:href="linkdata" target="_black">{{linkData}}</a>
+        <p>{{content}}</p>
+
+    </div>          
+        
+</body>
+</html>

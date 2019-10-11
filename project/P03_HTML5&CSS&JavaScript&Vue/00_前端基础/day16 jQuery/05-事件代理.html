@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script src="./js/jquery-1.12.4.min.js"></script>
+    <script>
+        $(function(){
+            $("#b1").click(function(){
+                $("#ul1").append("<li>元素</li>");
+            });
+
+            $("#ul1").delegate("li","mouseover",function(){
+                $(this).css({background:"red"});
+            });
+
+            $("#ul1").delegate("li","mouseout",function(){
+                $(this).css({background:""});
+            });
+
+        });
+    
+    
+    
+    </script>
+</head>
+<body>
+
+        <button id="b1">点我呀</button>
+        <ul id="ul1">
+            <li>元素1</li>
+            <li>元素2</li>
+            <li>元素3</li>
+            <li id="l4">元素4</li>
+            <li>元素5</li>
+        </ul>
+        
+</body>
+</html>

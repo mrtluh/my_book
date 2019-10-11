@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script src="./js/jquery-1.12.4.min.js"></script>
+    <script>
+    
+        $(function(){
+            $("#div1").css({
+                background:"red",
+            })
+            $("p").css({background:"blue"})
+            $(".span").css({background:"yellow"})
+            $("#div3 ol li").css({background:"pink"})
+            $("img[alt=img1]").css({width:"200px",height:"200px"})
+        })
+    
+    </script>
+</head>
+<body>
+        <div id="div1">这是第一区块</div>
+        <div id="div2">这是第二区块</div>
+
+        <p>这是标签选择器</p>
+
+        <span class="span">这是类选择器</span>
+
+        <div id="div3">
+            <ol>
+                <li>这是层级选择器</li>
+                <li></li>
+                <li></li>
+            </ol>
+        </div>
+    
+        <p1>这是属性选择器<img src="./img/images/002.jpg" alt="img1"></p1>
+</body>
+</html>

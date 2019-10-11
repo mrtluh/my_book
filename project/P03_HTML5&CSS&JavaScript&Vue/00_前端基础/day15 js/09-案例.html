@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script>
+        window.onload = function(){
+            var oBtn = document.getElementById("btn1");
+            var oUl = document.getElementById("ul1");
+            var oBtn2 = document.getElementById("btn2");
+
+            oBtn.onclick = function(){
+                oUl.innerHTML +=  '<img src="./img/xjj2.jpg" alt="">';
+            }
+
+            // oBtn.onclick = function(){
+            //     oUl.innerHTML = ""
+            // }
+            oBtn2.onclick = function(){
+                oUl.innerHTML = "";
+            }
+        } 
+    
+    </script>
+</head>
+<body>
+    <button id="btn1">点我添加小姐姐</button>
+    <ul id="ul1">
+        
+    </ul>
+    <button id="btn2">点我清除</button>
+</body>
+</html>

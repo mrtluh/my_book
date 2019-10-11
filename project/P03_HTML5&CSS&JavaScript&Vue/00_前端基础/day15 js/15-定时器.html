@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script>
+
+        window.onload = function(){
+            oTime1 = setTimeout(function(nu){
+
+            // alert("单次定时器执行了!"+nu)
+                var oH1 = document.getElementById("h1");
+                oH1.innerHTML += '<p>单次定时器执行了</p>'
+
+            },2000,20
+            )
+
+            oTime2 = setInterval(function(nu){
+            // alert("多次定时器执行了"+nu)
+                var oH2 = document.getElementById('h2')
+                oH2.innerHTML += '<p>多次定时器执行了</p>'
+            },2000,100)
+
+            var oBtn1 = document.getElementById("btn1");
+            oBtn1.onclick = function(){
+                clearTimeout(oTime1)
+            }
+
+            var oBtn2 = document.getElementById("btn2");
+            oBtn2.onclick = function(){
+                clearInterval(oTime2)
+            }
+
+        }
+    
+    </script>
+</head>
+<body>
+        <h1 id="h1"></h1>
+        <h1 id="h2"></h1>
+        <button id="btn1">清除单次计时器</button>
+        <button id="btn2">清除多次计时器</button>
+</body>
+</html>

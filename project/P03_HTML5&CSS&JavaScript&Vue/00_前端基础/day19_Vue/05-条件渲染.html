@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script src="./js/vue.js"></script>
+    <script>
+        window.onload = function(){
+            var vm = new Vue({
+                el:".box",
+                data:{
+                    content1:"成功了",
+                    content2:"失败",
+                    content3:"不清楚",
+                    flag:null,
+                    num:21,
+                }
+            })
+        }
+    
+    </script>
+</head>
+<body>
+        <div class="box">
+            <ul>
+                <li v-if="flag == true">{{ content1 }}</li>
+                <li v-else-if="flag == false">{{content2}}</li>
+                <li v-else="flag == none">{{ content3 }}</li>
+                <p v-show="num == 21">我显示了，哈哈</p>
+            </ul>
+            <!-- v-show用法和v-if大致一样，但是它不支持v-else,它和v-if的区别是，它制作元素样式的显示和隐藏，元素一直是存在的
+
+            注意在vue中使用v-show, 原来的css代码不能设置display属性, 会导致冲突 -->
+
+        </div>
+</body>
+</html>

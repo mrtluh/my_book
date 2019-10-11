@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script src="./js/jquery-1.12.4.min.js"></script>
+    <script>
+        // 试用至少5种方法完成以下功能:
+
+        // 能够让元素4所在的 li 标签样式 背景变为蓝色
+
+        // 方法1 直接设置背景颜色
+        // 方法2 通过CSS盒子设置背景颜色
+        // 方法3 通过js设置
+        // window.onload = function(){
+        //     var oL = document.getElementById("l3");
+        //     oL.style.background = "blue"
+        // }
+        // 方法4 通过jQuery设置
+        // $(function(){
+        //     $("#l3").css({background:"blue"});
+        // });
+        // 方法5 通过jQurey选择集过滤
+        
+        // $(function(){
+        //     $("li").eq(2).css({background:"blue"});
+        // })
+
+        // 方法6 通过jQurey选择集转移过滤
+
+        $(function(){
+            // $("li").eq(1).next().css({background:"blue"});
+            // $("li").eq(3).prev().css({background:"blue"});
+            // $("ul").children("#l3").css({background:"blue"});
+            // $("ul").find("#l3").css({background:"blue"});
+            $("ul").find("li").eq(2).css({background:"blue"});
+
+        })
+    </script>
+    <!-- <style>
+        #l3{
+            background: blue;
+        }
+    </style> -->
+</head>
+<body>
+    <ul>
+    
+            <li>元素 1</li>
+    
+            <li>元素 2</li>
+    
+            <li id="l3">元素 3</li>
+            <!-- <li id="l3" style="background: blue">元素 3</li> -->
+    
+            <li>元素 4</li>
+    
+            <li>元素 6</li>
+    
+            <li>元素 7</li>
+    
+            <li>元素 8</li>
+        
+    </ul>
+</body>
+</html>

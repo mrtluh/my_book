@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+
+        <script>
+        
+            var obj = new Object();
+            obj.name = "小明";
+            obj.age = 28;
+            obj.address = "北京";
+            obj.getAge = function(){
+                return this.age;
+            }
+            
+            alert(obj.name + obj.getAge() + obj.address)
+
+            var obj2;
+            obj2 = {
+                name:"旺达",
+                age:29,
+                address:"北京",
+                getAdd:function(){
+                    return this.address
+                },
+            }
+            alert(obj2.getAdd())
+        </script>
+
+
+</head>
+<body>
+    
+</body>
+</html>

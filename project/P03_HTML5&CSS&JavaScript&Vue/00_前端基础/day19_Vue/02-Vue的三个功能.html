@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script src="./js/vue.js"></script>
+    <script>
+        window.onload = function() {
+            var vm = new Vue({
+                el:"div",
+                data:{
+                    content:"修改标签包裹的内容",
+                    imageUrl:"./img/04.jpg",
+                    },
+                methods:{
+                    fnClick:function(){
+                        alert("操作事件")
+                    }
+                }
+                })
+            }
+    </script>
+</head>
+<body>
+        
+        <div class="box">
+            <!-- 操作事件 -->
+            <button v-on:click="fnClick">操作事件</button><br>
+
+            <!-- 操作数据 -->
+            <p>{{ content }}</p>
+            <p>{{ content }}</p>
+            <p>{{ content }}</p>
+
+            <!-- 操作属性 -->
+            <img v-bind:src="imageUrl" alt="美女图片">
+            
+           
+          
+        </div>
+        
+        
+       
+</body>
+</html>

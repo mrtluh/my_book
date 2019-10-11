@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script src="./js/jquery-1.12.4.min.js"></script>
+    <script>
+        $(function(){
+            // 选择集过滤: 多个标签中再次加条件进行筛选
+
+            // 1 .eq(下标)  筛选出集合中对应下标的标签
+            // $('div').css({background: "red"});
+            // $('div').eq(0).css({background: "red"});
+
+            // 2 .has(后代标签对应的选择器)   得到还是 div 标签
+            // $('div').has('#mytext').css({background: "red"});
+
+            $("div").eq(1).css({background:"red"});
+            $("div").has("#mytext").css({background:"green"})
+            $("div").has("input[type=password]").css({background:"yellow"})
+        })
+    </script>
+</head>
+<body>
+        <div>
+            这是第一个div
+            <input type="text" id="mytext">
+        </div>
+
+        <div id="div2">
+            这是第二个div
+            <input type="text">
+            <input type="button">
+        </div>
+        <div>
+            <input type="password">
+        </div>
+</body>
+</html>
