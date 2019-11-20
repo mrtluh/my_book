@@ -1,0 +1,60 @@
+### Feature descriptions 
+
+- Id [用户id]
+  - Player’s Id
+- groupId [所处小队id]
+  - ID to identify a group within a match. If the same group of players plays in different matches, they will have a different groupId each time.
+- matchId [该场比赛id]
+  - ID to identify match. There are no matches that are in both the training and testing set.
+- assists [助攻数]
+  - Number of enemy players this player damaged that were killed by teammates.
+- boosts [使用能量,道具数量]
+  - Number of boost items used.
+- damageDealt [总伤害]
+  - Total damage dealt. Note: Self inflicted damage is subtracted.
+- DBNOs [击倒敌人数量]
+  - Number of enemy players knocked.
+- headshotKills [爆头数]
+  - Number of enemy players killed with headshots.
+- heals [使用治疗药品数量]
+  - Number of healing items used.
+- killPlace [本厂比赛杀敌排行]
+  - Ranking in match of number of enemy players killed.
+- killPoints [Elo杀敌排名]
+  - Kills-based external ranking of player. (Think of this as an Elo ranking where only kills matter.) If there is a value other than -1 in rankPoints, then any 0 in killPoints should be treated as a “None”.
+- kills [杀敌数]
+  - Number of enemy players killed.
+- killStreaks [连续杀敌数]
+  - Max number of enemy players killed in a short amount of time.
+- longestKill [最远杀敌距离]
+  - Longest distance between player and player killed at time of death. This may be misleading, as downing a player and driving away may lead to a large longestKill stat.
+- matchDuration [比赛时长] 
+  - Duration of match in seconds.
+- matchType [比赛类型(小组人数)]
+  - String identifying the game mode that the data comes from. The standard modes are “solo”, “duo”, “squad”, “solo-fpp”, “duo-fpp”, and “squad-fpp”; other modes are from events or custom matches.
+- maxPlace [本局最差名次]
+  - Worst placement we have data for in the match. This may not match with numGroups, as sometimes the data skips over placements.
+- numGroups [小组数量]
+  - Number of groups we have data for in the match.
+- rankPoints [Elo排名]
+  - Elo-like ranking of player. This ranking is inconsistent and is being deprecated in the API’s next version, so use with caution. Value of -1 takes place of “None”.
+- revives [救活队员的次数]
+  - Number of times this player revived teammates.
+- rideDistance [驾车距离]
+  - Total distance traveled in vehicles measured in meters.
+- roadKills [驾车杀敌数]
+  - Number of kills while in a vehicle.
+- swimDistance [游泳距离]
+  - Total distance traveled by swimming measured in meters.
+- teamKills [杀死队友的次数]
+  - Number of times this player killed a teammate.
+- vehicleDestroys [毁坏机动车的数量]
+  - Number of vehicles destroyed.
+- walkDistance [步行距离]
+  - Total distance traveled on foot measured in meters.
+- weaponsAcquired [收集武器的数量]
+  - Number of weapons picked up.
+- winPoints [胜率Elo排名]
+  - Win-based external ranking of player. (Think of this as an Elo ranking where only winning matters.) If there is a value other than -1 in rankPoints, then any 0 in winPoints should be treated as a “None”.
+- winPlacePerc [百分比排名]
+  - The target of prediction. This is a percentile winning placement, where 1 corresponds to 1st place, and 0 corresponds to last place in the match. It is calculated off of maxPlace, not numGroups, so it is possible to have missing chunks in a match.
